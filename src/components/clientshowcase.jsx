@@ -1,5 +1,4 @@
 import React from "react";
-import "../app.css";
 import worldmap from "../assets/images/61772.jpg";
 
 export default function ClientShowcase() {
