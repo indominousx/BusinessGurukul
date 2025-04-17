@@ -1,6 +1,11 @@
 import React from "react";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
+import Award1 from "../assets/images/award1.png";
+import Award2 from "../assets/images/award2.png";
+import Award3 from "../assets/images/award3.png";
+import Award4 from "../assets/images/award4.png";
+import Award5 from "../assets/images/award5.png";
 
 export default function HeroSection() {
   return (
@@ -39,11 +44,11 @@ export default function HeroSection() {
 
           {/* Trust Badges */}
           <div className="flex gap-6 items-center mt-6 flex-wrap">
-            <img src="/badges/clutch.png" alt="Clutch" className="h-14" />
-            <img src="/badges/award1.png" alt="Award" className="h-14" />
-            <img src="/badges/top.png" alt="Top IT" className="h-14" />
-            <img src="/badges/warc.png" alt="WARC" className="h-14" />
-            <img src="/badges/gold.png" alt="Gold" className="h-14" />
+            <img src={Award1} alt="Clutch" className="h-14" />
+            <img src={Award2} alt="Award" className="h-14" />
+            <img src={Award3} alt="Top IT" className="h-14" />
+            <img src={Award4} alt="WARC" className="h-14" />
+            <img src={Award5} alt="Gold" className="h-14" />
           </div>
         </div>
 
@@ -85,9 +90,9 @@ export default function HeroSection() {
             ></textarea>
 
             {/* reCAPTCHA placeholder */}
-            <div className="bg-gray-100 border rounded px-3 py-3 text-center text-gray-500 text-sm">
+            {/* <div className="bg-gray-100 border rounded px-3 py-3 text-center text-gray-500 text-sm">
               [reCAPTCHA Here]
-            </div>
+            </div> */}
 
             <button
               type="submit"
