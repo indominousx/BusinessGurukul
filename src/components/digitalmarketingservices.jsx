@@ -1,6 +1,6 @@
 import React from "react";
 import Semrush from "../assets/images/semrush.png";
-import Ahrefs from "../assets/images/ahrefs.png";
+import Ahrefs from "../assets/images/Ahrefs.png";
 // import GoogleAnalytics from "../assets/images/google-analytics.png";
 import ScreamingFrog from "../assets/images/screaming-frog.png";
 import GoogleTrends from "../assets/images/google-trends.png";
