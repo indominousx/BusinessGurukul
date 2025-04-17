@@ -11,7 +11,7 @@ import pvr from "../assets/images/pvr.png";
 import OjasVegan from "../assets/images/Ojas-Vegan.png";
 import pernodrichards from "../assets/images/pernodrichard.png";
 import relaxo from "../assets/images/relaxo.png";
-import Resustainability from "../assets/images/resustainability.png";
+import Resustainability from "../assets/images/Resustainability.png";
 import gorwscaled from "../assets/images/grow-scaled-1.jpg";
 
 export default function ClientShowcase() {
