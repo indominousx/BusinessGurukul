@@ -1,4 +1,6 @@
 import React from "react";
+import "react-phone-input-2/lib/style.css";
+import PhoneInput from "react-phone-input-2";
 
 export default function HeroSection() {
   return (
@@ -63,13 +65,12 @@ export default function HeroSection() {
             />
 
             <div className="flex items-center gap-2">
-              <span className="border rounded px-2 py-1 bg-gray-100 text-sm">
-                🇮🇳 +91
-              </span>
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                className="flex-1 border px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
+              <PhoneInput
+                country={"in"}
+                enableSearch={true}
+                placeholder="Enter phone number"
+                inputClass="!w-full !py-2 !pl-12 !pr-3"
+                containerClass="!w-full border black rounded"
               />
             </div>
 
