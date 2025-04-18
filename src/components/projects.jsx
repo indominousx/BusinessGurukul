@@ -37,7 +37,7 @@ export default function Projects() {
               contemporary touch, Union Home Furniture offers home furnishings
               for your bedroom, living room, and office spaces at affordable
               pricing. They have a strong offline presence and were looking to
-              improve their digital presence with SEO. OrangeMantra was the
+              improve their digital presence with SEO. Business Gurukull was the
               perfect digital marketing service provider for their business
               expansion on the digital front.
             </p>
@@ -76,8 +76,8 @@ export default function Projects() {
               the USA. It distributes a wide array of food service and
               industrial products, including equipment, foodstuffs, and
               industrial packaging. The client was looking to grow its website
-              organic traffic and conversion rate. OrangeMantra partnered with
-              them to achieve their business growth goals.
+              organic traffic and conversion rate. Business Gurukull partnered
+              with them to achieve their business growth goals.
             </p>
             <a
               href="#"

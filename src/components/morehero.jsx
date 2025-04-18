@@ -11,7 +11,7 @@ export default function MoreHero() {
             Company
           </h2>
           <p className="text-gray-700 mb-4">
-            OrangeMantra is the right strategic digital marketing agency to
+            Business Gurukull is the right strategic digital marketing agency to
             provide you with a solution that brings the desired digital presence
             to your business.
           </p>
