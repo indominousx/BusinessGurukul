@@ -15,6 +15,11 @@ import Roadmap from "../components/roadmap";
 import FAQ from "../components/faq";
 import WhyUs from "../components/whyus";
 import DigitalPresenceCTA from "../components/reachus";
+import VideoTiles from "../components/videotiles";
+import TechDevServices from "../components/technologiaclservices";
+import BusinessConsultingServices from "../components/BusinessConsultingServices";
+import ClientTestimonials from "../components/ClientTestimonials";
+import LatestInsights from "../components/LatestInsights";
 
 export default function Home() {
   const [count, setCount] = useState(0);
@@ -27,12 +32,17 @@ export default function Home() {
       <MarketingServices />
       <Projects />
       <Digitalmarketingservices />
+      <VideoTiles />
+      <BusinessConsultingServices />
+      <TechDevServices />
       <YourBusiness />
       <IndustriesSection />
       <Roadmap />
       <DigitalPresenceCTA />
       <WhyUs />
+      <LatestInsights />
       <FAQ />
+      <ClientTestimonials />
       <Footer />
     </div>
   );

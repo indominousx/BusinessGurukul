@@ -14,31 +14,50 @@ export default function HeroSection() {
         {/* Left Section */}
         <div className="md:w-2/3 p-10 flex flex-col justify-center">
           <h2 className="text-4xl font-extrabold mb-6 leading-tight">
-            Elevate Your Brand with{" "}
-            <span className="text-yellow-400">Digital Marketing</span>
+            Empowering Your Business Journey with{" "}
+            <span className="text-yellow-400">Tailored Solutions</span>
           </h2>
           <p className="mb-8 text-gray-200 text-lg">
-            Achieve unparalleled growth with cutting-edge digital marketing
-            strategies. Partner with industry leaders and unlock your brand's
-            potential.
+            From Digital Marketing to Technology Development, to Video
+            Production to Business Consulting We Drive Your Success.
           </p>
 
           {/* Tags */}
           <div className="flex flex-wrap gap-3 mb-8">
             {[
-              "SEO",
-              "PPC",
-              "SMO",
-              "ORM",
-              "Email Marketing",
-              "Google Analytics",
+              {
+                label: "Explore Our Services",
+                onClick: () => alert("SEO services coming soon!"),
+              },
+              {
+                label: "Get a Free Consultation",
+                onClick: () => alert("PPC campaigns tailored for you!"),
+              },
+              // {
+              //   label: "SMO",
+              //   onClick: () => alert("SMO strategies at your service!"),
+              // },
+              // {
+              //   label: "ORM",
+              //   onClick: () => alert("ORM solutions available!"),
+              // },
+              // {
+              //   label: "Email Marketing",
+              //   onClick: () => alert("Boost with Email Marketing!"),
+              // },
+              // {
+              //   label: "Google Analytics",
+              //   onClick: () => alert("Google Analytics insights!"),
+              // },
             ].map((tag) => (
-              <span
-                key={tag}
-                className="border border-yellow-400 px-4 py-1 rounded-full text-sm bg-yellow-400 text-purple-800 font-semibold"
+              <button
+                key={tag.label}
+                type="button"
+                onClick={tag.onClick}
+                className="border !border-yellow-400 !px-4 !py-1 !rounded-full text-sm !bg-yellow-400 text-purple-800 font-semibold transition-colors !hover:bg-yellow-300 !focus:outline-none !focus:ring-2 !focus:ring-yellow-500"
               >
-                {tag}
-              </span>
+                {tag.label}
+              </button>
             ))}
           </div>
 

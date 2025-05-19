@@ -14,21 +14,24 @@ const Navbar = () => {
         {/* /* Center Nav Links  */}
         <div className="hidden md:flex space-x-6 text-sm font-medium text-gray-800">
           <Link to="/" className="hover:text-orange-600! !text-gray-800">
-            Offerings
+            Home
           </Link>
           <Link to="/" className="hover:text-orange-600! !text-gray-800">
-            Staffing
+            About Us
           </Link>
           <Link to="/" className="hover:text-orange-600! !text-gray-800">
-            Managed Services
+            Services
           </Link>
           <Link to="/" className="hover:text-orange-600! !text-gray-800">
-            AI Agents
+            Case Studies
           </Link>
           <Link to="/" className="hover:text-orange-600! !text-gray-800">
-            Partners
+            Blog
           </Link>
           <Link to="/" className="hover:text-orange-600! !text-gray-800">
+            Career
+          </Link>
+          {/* <Link to="/" className="hover:text-orange-600! !text-gray-800">
             Integrations
           </Link>
           <Link to="/" className="hover:text-orange-600! !text-gray-800">
@@ -36,7 +39,7 @@ const Navbar = () => {
           </Link>
           <Link to="/" className="hover:text-orange-600! !text-gray-800">
             Work
-          </Link>
+          </Link> */}
           <div className="ml-auto">
             <Link
               to="/"

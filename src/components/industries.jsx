@@ -16,14 +16,31 @@ const industries = [
 
 export default function IndustriesSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [imagesPerView, setImagesPerView] = useState(4);
+
+  useEffect(() => {
+    const updateImagesPerView = () => {
+      const width = window.innerWidth;
+      if (width < 640) setImagesPerView(1); // Mobile
+      else if (width < 1024) setImagesPerView(2); // Tablet
+      else if (width < 1280) setImagesPerView(3); // Small desktop
+      else setImagesPerView(4); // Large desktop
+    };
+
+    updateImagesPerView();
+    window.addEventListener("resize", updateImagesPerView);
+    return () => window.removeEventListener("resize", updateImagesPerView);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % industries.length);
+      setCurrentSlide(
+        (prev) => (prev + 1) % Math.ceil(industries.length / imagesPerView)
+      );
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [imagesPerView]);
 
   return (
     <div className="flex">
@@ -50,13 +67,16 @@ export default function IndustriesSection() {
             <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{
-                transform: `translateX(-${(currentSlide * 100) / 4}%)`,
+                transform: `translateX(-${
+                  (currentSlide * 100) / imagesPerView
+                }%)`,
               }}
             >
               {industries.map((industry, index) => (
                 <div
                   key={index}
                   className="flex-shrink-0 w-1/4 h-full relative px-4"
+                  style={{ width: `${100 / imagesPerView}%` }}
                 >
                   <img
                     src={industry.image}
@@ -78,7 +98,9 @@ export default function IndustriesSection() {
             className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg transition-transform hover:scale-110"
             onClick={() =>
               setCurrentSlide((prev) =>
-                prev <= 0 ? industries.length - 4 : prev - 1
+                prev <= 0
+                  ? Math.ceil(industries.length / imagesPerView) - 1
+                  : prev - 1
               )
             }
           >
@@ -88,7 +110,9 @@ export default function IndustriesSection() {
             className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg transition-transform hover:scale-110"
             onClick={() =>
               setCurrentSlide((prev) =>
-                prev >= industries.length - 4 ? 0 : prev + 1
+                prev >= Math.ceil(industries.length / imagesPerView) - 1
+                  ? 0
+                  : prev + 1
               )
             }
           >

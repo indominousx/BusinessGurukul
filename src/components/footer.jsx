@@ -16,6 +16,34 @@ export default function Footer() {
             </button>
           </div>
 
+          {/* Middle: Contact Details */}
+          <div className="mb-8 lg:mb-0 lg:mx-12">
+            <h3 className="text-xl font-bold mb-2 text-blue-300">
+              Contact Details
+            </h3>
+            <ul className="text-gray-300 text-sm space-y-1">
+              <li>
+                <span className="font-semibold">Address:</span> 5th Floor The
+                Hub Building, Lane No 06, Koregoan Park, Pune.
+              </li>
+              <li>
+                <span className="font-semibold">Phone:</span>{" "}
+                <a href="tel:8999685423" className="hover:text-blue-400">
+                  8999685423
+                </a>
+              </li>
+              <li>
+                <span className="font-semibold">Email:</span>{" "}
+                <a
+                  href="mailto:Office@businessgurukull.com"
+                  className="hover:text-blue-400"
+                >
+                  Office@businessgurukull.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
           {/* Right: Social Links */}
           <div className="flex space-x-6">
             {[
@@ -59,7 +87,7 @@ export default function Footer() {
         {/* Map Section */}
         <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-2xl mb-12">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160975283!2d72.74110105!3d19.0821978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63d84e4f8db%3A0x40e391b202d1b1f0!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1612345678910!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60512.092697287284!2d73.79236189230933!3d18.573777539415676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1b88ec9cd0b%3A0x6a160546d710b54f!2sBusiness%20Gurukull%20-%20Best%20Digital%20Marketing%20Company!5e0!3m2!1sen!2sin!4v1747645827372!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -68,6 +96,25 @@ export default function Footer() {
             referrerPolicy="no-referrer-when-downgrade"
             title="Google Map"
           ></iframe>
+        </div>
+
+        {/* Navigation Shortcuts */}
+        <div className="flex flex-wrap justify-center gap-6 mb-12">
+          {[
+            { name: "Home", href: "/" },
+            { name: "About Us", href: "/about" },
+            { name: "Services", href: "/services" },
+            { name: "Portfolio", href: "/portfolio" },
+            { name: "Contact", href: "/contact" },
+          ].map((nav, idx) => (
+            <a
+              key={idx}
+              href={nav.href}
+              className="text-gray-300 hover:text-blue-400 font-medium transition"
+            >
+              {nav.name}
+            </a>
+          ))}
         </div>
 
         {/* Bottom Section */}

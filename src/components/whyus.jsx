@@ -3,27 +3,27 @@ import { useState, useEffect } from "react";
 const slides = [
   {
     number: "01",
-    title: "Customized Strategies",
+    title: "Customized Solutions",
     description:
-      "We tailor digital marketing strategies to fit your specific business goals and target audience.",
+      "No one-size-fits-all approach. Everything we offer is tailored to your business.",
   },
   {
     number: "02",
-    title: "Experienced Team",
+    title: "Proven Expertise",
     description:
-      "Our experts have years of experience across industries, ensuring the best practices are applied to your campaigns.",
+      "With years of experience, we understand the challenges and opportunities businesses face.",
   },
   {
     number: "03",
-    title: "Data-Driven Approach",
+    title: "End-to-End Support",
     description:
-      "We focus on analytics and insights to constantly optimize your performance and ROI.",
+      "From strategy to execution, we are your growth partners at every step.",
   },
   {
     number: "04",
-    title: "Competitive Pricing",
+    title: "Result-Oriented Approach",
     description:
-      "High-quality digital marketing services without breaking your bank account.",
+      "Our success is measured by your success — we are driven by results, not just reports.",
   },
 ];
 

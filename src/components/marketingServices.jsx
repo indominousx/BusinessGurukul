@@ -211,7 +211,7 @@ export default function MarketingServices() {
           </div>
 
           {/* Card 9 */}
-          <div
+          {/* <div
             className="group bg-white shadow-lg p-6 flex flex-col items-start transition-all duration-300 hover:shadow-2xl
                             rounded-tl-none rounded-tr-[2rem] rounded-bl-[2rem] rounded-br-none
                             hover:rounded-tl-[2rem] hover:rounded-tr-none hover:rounded-bl-none hover:rounded-br-[2rem]
@@ -224,6 +224,29 @@ export default function MarketingServices() {
             <p className="text-gray-700 mb-4 text-sm">
               Build a strong online presence with our professional web
               development services.
+            </p>
+            <a
+              href="#"
+              className="text-red-500 text-sm font-semibold hover:underline"
+            >
+              Read More
+            </a>
+          </div> */}
+
+          {/* Card 10 */}
+          <div
+            className="group bg-white shadow-lg p-6 flex flex-col items-start transition-all duration-300 hover:shadow-2xl
+                            rounded-tl-none rounded-tr-[2rem] rounded-bl-[2rem] rounded-br-none
+                            hover:rounded-tl-[2rem] hover:rounded-tr-none hover:rounded-bl-none hover:rounded-br-[2rem]
+                            border border-gray-200 hover:bg-violet-300"
+          >
+            <div className="bg-purple-600 p-2 rounded-md mb-4">🧑‍💼</div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              Complete Marketing Consultation
+            </h3>
+            <p className="text-gray-700 mb-4 text-sm">
+              Tailor a full-fledged marketing strategy aligned with your
+              business goals.
             </p>
             <a
               href="#"
