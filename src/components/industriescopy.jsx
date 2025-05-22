@@ -24,14 +24,23 @@ const industries = [
 export default function IndustriesSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imagesPerView, setImagesPerView] = useState(4);
+  const [slides, setSlides] = useState([]);
 
+  // const chunkArray = (arr, size) =>
+  //   Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
+  //     arr.slice(i * size, i * size + size)
+  //   );
+
+  // Update slides based on screen size
   useEffect(() => {
     const updateImagesPerView = () => {
       const width = window.innerWidth;
-      if (width < 640) setImagesPerView(1); // Mobile
-      else if (width < 1024) setImagesPerView(2); // Tablet
-      else if (width < 1280) setImagesPerView(3); // Small desktop
-      else setImagesPerView(4); // Large desktop
+      let perView = 4;
+      if (width < 640) perView = 1;
+      else if (width < 1024) perView = 2;
+      else if (width < 1280) perView = 3;
+
+      setImagesPerView(perView);
     };
 
     updateImagesPerView();
@@ -39,10 +48,11 @@ export default function IndustriesSection() {
     return () => window.removeEventListener("resize", updateImagesPerView);
   }, []);
 
+  // Auto-slide
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide(
-        (prev) => (prev + 1) % Math.ceil(industries.length / imagesPerView)
+      setCurrentSlide((prev) =>
+        prev >= industries.length - imagesPerView ? 0 : prev + 1
       );
     }, 3000);
 
@@ -70,20 +80,25 @@ export default function IndustriesSection() {
 
         {/* Right Slideshow */}
         <div className="lg:w-2/3 mt-8 lg:mt-0 relative flex items-center justify-center">
-          <div className="w-full h-96 overflow-hidden relative rounded-2xl shadow-2xl flex">
+          <div className="w-full h-96 overflow-hidden relative rounded-2xl shadow-2xl">
             <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{
                 transform: `translateX(-${
-                  (currentSlide * 100) / imagesPerView
+                  currentSlide * (100 / imagesPerView)
                 }%)`,
+                width: `${(100 / imagesPerView) * industries.length}%`,
               }}
             >
               {industries.map((industry, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-1/4 h-full relative px-4"
-                  style={{ width: `${100 / imagesPerView}%` }}
+                  className="fflex-shrink-0 w-1/4 h-full relative px-4"
+                  style={{
+                    width: `${100 / industries.length}%`,
+                    height: "100%",
+                    minHeight: "300px",
+                  }}
                 >
                   <img
                     src={industry.image}
@@ -102,24 +117,20 @@ export default function IndustriesSection() {
 
           {/* Navigation Buttons */}
           <button
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg transition-transform hover:scale-110"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg transition-transform hover:scale-110 z-10"
             onClick={() =>
               setCurrentSlide((prev) =>
-                prev <= 0
-                  ? Math.ceil(industries.length / imagesPerView) - 1
-                  : prev - 1
+                prev <= 0 ? industries.length - imagesPerView : prev - 1
               )
             }
           >
             &#8249;
           </button>
           <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg transition-transform hover:scale-110"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg transition-transform hover:scale-110 z-10"
             onClick={() =>
               setCurrentSlide((prev) =>
-                prev >= Math.ceil(industries.length / imagesPerView) - 1
-                  ? 0
-                  : prev + 1
+                prev >= industries.length - imagesPerView ? 0 : prev + 1
               )
             }
           >

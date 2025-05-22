@@ -47,10 +47,8 @@ const BusinessConsultingServices = () => {
     <div
       className={`container mx-auto px-4 sm:px-6 lg:px-12 py-16 ${gradientBg} rounded-3xl shadow-xl`}
     >
-      <h2 className="text-4xl font-extrabold text-center mb-14 text-indigo-800 tracking-tight drop-shadow-lg">
-        <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-          Business Consulting Services
-        </span>
+      <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
+        Business Consulting Services
       </h2>
 
       <div className="grid gap-8 md:grid-cols-2">

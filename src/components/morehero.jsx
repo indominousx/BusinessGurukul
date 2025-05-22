@@ -4,31 +4,32 @@ export default function MoreHero() {
   return (
     <div className="bg-white py-16 px-6 md:px-20">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left Side: Text */}
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Get Significant Boost to Your Business with Digital Marketing
             Company
           </h2>
           <p className="text-gray-700 mb-4">
-            Business Gurukull is the right strategic digital marketing agency to
-            provide you with a solution that brings the desired digital presence
-            to your business.
+            <b>Business Gurukull</b> is a marketing and consulting powerhouse
+            for mid-segment businesses across India.
+          </p>
+          <p className="text-gray-700 mb-4">
+            With <b>60+ services</b>, a <b>results-first approach</b>, and{" "}
+            <b>automation-driven systems</b>, we help ambitious entrepreneurs
+            build lead machines and grow revenue consistently.
           </p>
           <p className="text-gray-700">
-            From lead generation and brand awareness to customer acquisition and
-            retention, our digital marketing company does it all for you.
+            Our mission is simple —{" "}
+            <b>Help You Win with Systems, Strategy &amp; Speed.</b>
           </p>
         </div>
-
-        {/* Right Side: Stats Cards */}
         <div className="grid grid-cols-2 gap-6">
           {[
             { icon: "💼", number: "22+", label: "Years of Experience" },
             { icon: "🏅", number: "50+", label: "Top Brands Served" },
             {
               icon: "👍",
-              number: "300+",
+              number: "500+",
               label: "Industry-best Professionals",
             },
             { icon: "😊", number: "100+", label: "Happy Clients" },
