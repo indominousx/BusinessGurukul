@@ -31,14 +31,14 @@ export default function Navbar() {
     openDropdown === key && (
       <div className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg z-50">
         {items.map(({ to, label }) => (
-          <a
+          <Link
             key={label}
-            href={to}
+            to={to}
             onClick={() => setOpenDropdown(null)}
             className="block px-4 py-2 hover:bg-orange-50 text-gray-800"
           >
             {label}
-          </a>
+          </Link>
         ))}
       </div>
     );
@@ -59,10 +59,34 @@ export default function Navbar() {
             Home
           </Link>
 
-          {/* Services Button */}
-          <Link to="/all-services" className="hover:text-orange-600 !text-gray-800">
-            Services
-          </Link>
+          {/* Services Dropdown */}
+          <div className="relative" ref={dropdownRefs.services}>
+            <button
+              className="hover:text-orange-600 flex items-center"
+              onClick={() => toggleDropdown("services")}
+            >
+              Services
+              <svg
+                className="ml-1 w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            {renderDropdown("services", [
+              { to: "/consulting", label: "Business Consulting" },
+              { to: "/tech-development", label: "Tech Development Services" },
+              { to: "/video-ad", label: "Video / Ad Services" },
+              { to: "/digital-marketing", label: "Digital Marketing Services" },
+            ])}
+          </div>
 
           {/* Career Dropdown */}
           <div className="relative" ref={dropdownRefs.career}>
