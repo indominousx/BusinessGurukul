@@ -9,6 +9,7 @@ import VideoTiles from "./components/videotiles";
 import Hiring from "./pages/hiring";
 import Jobs from "./pages/jobs";
 import Internship from "./pages/internship";
+import CaseStudies from "./pages/CaseStudies";
 import "./App.css";
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/hiring" element={<Hiring />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/internship" element={<Internship />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
         </Routes>
       </div>
     </Router>

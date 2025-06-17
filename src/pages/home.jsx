@@ -49,8 +49,7 @@ export default function Home() {
       <WhyUs />
       <LatestInsights />
       <FAQ />
-      <ClientTestimonials />
-      
+      <ClientTestimonials /> 
       <Footer />
     </div>
   );
