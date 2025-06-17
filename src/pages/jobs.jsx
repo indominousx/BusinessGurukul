@@ -42,20 +42,20 @@ const openings = [
 
 export default function Jobs() {
   return (
-    <div className="max-w-4xl mx-auto py-4 px-4 text-gray-900">
-      <h1 className="text-3xl font-bold mb-6">Current Openings</h1>
+    <div className="max-w-3xl mx-auto pt-24 pb-16 px-4 bg-gradient-to-br from-blue-50 to-white text-gray-900 rounded-lg shadow-xl">
+      <h1 className="text-4xl lg:text-5xl font-extrabold mb-8 text-blue-900">Current Openings</h1>
       {openings.map((group, idx) => (
         <div key={idx} className="mb-8">
-          <h2 className="text-xl font-semibold mb-2">{group.category}</h2>
-          <ul className="list-disc pl-6">
+          <h2 className="text-2xl font-semibold mb-4 text-purple-700">{group.category}</h2>
+          <ul className="list-disc pl-8 space-y-2 text-lg text-gray-700">
             {group.roles.map((role, i) => (
               <li key={i}>{role}</li>
             ))}
           </ul>
         </div>
       ))}
-      <p className="mt-8">
-        <strong>Don't see a role that fits?</strong> Feel free to reach out to us at <a href="mailto:careers@businessgurukull.com" className="text-orange-600 font-semibold">careers@businessgurukull.com</a>
+      <p className="mt-10 text-lg text-gray-700">
+        <strong className="font-semibold">Don't see a role that fits?</strong> Feel free to reach out to us at <a href="mailto:careers@businessgurukull.com" className="text-orange-600 font-semibold hover:underline">careers@businessgurukull.com</a>
       </p>
     </div>
   );
