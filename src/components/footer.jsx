@@ -11,7 +11,9 @@ export default function Footer() {
             <h2 className="text-4xl font-extrabold mb-4 text-white">
               Ready to Elevate Your Business?
             </h2>
-            <button className="bg-orange-500 hover:bg-orange-600 text-black font-bold py-3 px-8 rounded-full shadow-lg transition">
+            <button 
+            style={{ color: 'white' }}
+            className="bg-orange-500 hover:bg-orange-600 text-black font-bold py-3 px-8 rounded-full shadow-lg transition">
               Contact Us
             </button>
           </div>

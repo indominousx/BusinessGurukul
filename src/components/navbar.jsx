@@ -157,6 +157,7 @@ export default function Navbar() {
           <div className="ml-auto">
             <Link
               to="/contact"
+              style={{ color: 'white' }}
               className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full text-sm font-semibold"
             >
               Contact Us

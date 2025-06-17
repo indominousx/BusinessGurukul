@@ -10,6 +10,7 @@ import Hiring from "./pages/hiring";
 import Jobs from "./pages/jobs";
 import Internship from "./pages/internship";
 import CaseStudies from "./pages/CaseStudies";
+import About from "./pages/about";
 import "./App.css";
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/internship" element={<Internship />} />
           <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </Router>
