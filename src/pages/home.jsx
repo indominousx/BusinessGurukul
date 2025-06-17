@@ -24,6 +24,7 @@ import ProblemSolutionSection from "../components/ProblemSolutionSection";
 import SubheadlineHook from "../components/SubheadlineHook";
 import YourBusinessMore from "../components/yourbusinessmore";
 
+
 export default function Home() {
   const [count, setCount] = useState(0);
 
@@ -49,6 +50,7 @@ export default function Home() {
       <LatestInsights />
       <FAQ />
       <ClientTestimonials />
+      
       <Footer />
     </div>
   );

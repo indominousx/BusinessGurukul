@@ -2,6 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Navbar from "./components/navbar";
+import BusinessConsultingServices from "./components/BusinessConsultingServices";
+import Digitalmarketingservices from "./components/digitalmarketingservices";
+import TechDevServices from "./components/technologiaclservices";
+import VideoTiles from "./components/videotiles";
 import "./App.css";
 
 const App = () => {
@@ -11,6 +15,10 @@ const App = () => {
       <div className="mt-6">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/consulting" element={<BusinessConsultingServices />} />
+          <Route path="/digital-marketing" element={<Digitalmarketingservices />} />
+          <Route path="/tech-development" element={<TechDevServices />} />
+          <Route path="/video-ad" element={<VideoTiles />} />
         </Routes>
       </div>
     </Router>
