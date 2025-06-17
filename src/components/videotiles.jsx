@@ -94,7 +94,7 @@ const VideoServicesFeatures = () => {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-12 py-12">
       <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
-        What’s Included in Our Video & Ads Services
+        Our Video & Ads Services
       </h2>
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {videoFeatures.map((feature, index) => (

@@ -51,7 +51,7 @@ export default function ClientTestimonials() {
   return (
     <div className="bg-gray-50 py-14 px-4 sm:px-6 lg:px-16">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
-        What Our Clients Say
+        TESTIMONIALS
       </h2>
 
       <div className="max-w-4xl mx-auto">
