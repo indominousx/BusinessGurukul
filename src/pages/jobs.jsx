@@ -1,5 +1,6 @@
 import React from "react";
 import { Users, Briefcase, Film, Code, ArrowRight, Search, Clock, MapPin } from "lucide-react";
+import Footer from "../components/footer";
 
 const openings = [
   {
@@ -52,9 +53,9 @@ const openings = [
 export default function Jobs() {
   return (
     <div className="bg-purple-50 min-h-screen w-full">
-      {/* Hero Section */}
-      <div className="w-full bg-gradient-to-r from-blue-700 to-purple-600 py-16 px-4 md:px-16 flex items-center" style={{minHeight: '350px'}}>
-        <div className="max-w-3xl text-left">
+      {/* Hero Section - truly edge-to-edge */}
+      <div className="w-screen relative left-1/2 right-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-700 to-purple-600 py-16 flex items-center justify-center" style={{minHeight: '350px'}}>
+        <div className="w-full max-w-5xl px-4 md:px-16 text-left">
           <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-4">Current Openings</h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">
             Join our dynamic team across multiple departments and help us transform businesses through innovative solutions.
@@ -157,6 +158,9 @@ export default function Jobs() {
           </button>
         </div>
       </section>
+
+      {/* Footer Section */}
+      <Footer />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import {
   Instagram,
   Target,
 } from "lucide-react"; // Optional: Lucide icons
+import Footer from "../components/footer";
 
 const videoFeatures = [
   {
@@ -92,27 +93,30 @@ const videoFeatures = [
 
 const VideoServicesFeatures = () => {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-12 py-12">
-      <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
-        Our Video & Ads Services
-      </h2>
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {videoFeatures.map((feature, index) => (
-          <div
-            key={index}
-            className="flex items-start space-x-4 p-5 bg-white rounded-xl shadow hover:shadow-lg transition duration-300"
-          >
-            <div>{feature.icon}</div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800">
-                {feature.title}
-              </h3>
-              <p className="text-sm text-gray-600">{feature.description}</p>
+    <>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 py-12">
+        <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
+          Our Video & Ads Services
+        </h2>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {videoFeatures.map((feature, index) => (
+            <div
+              key={index}
+              className="flex items-start space-x-4 p-5 bg-white rounded-xl shadow hover:shadow-lg transition duration-300"
+            >
+              <div>{feature.icon}</div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-gray-600">{feature.description}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

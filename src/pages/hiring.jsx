@@ -1,12 +1,13 @@
 import React from "react";
 import { Briefcase, Users, Star, Heart, ArrowRight, Award, Clock, Users as TeamIcon } from "lucide-react";
+import Footer from "../components/footer";
 
 export default function Hiring() {
   return (
     <div className="bg-purple-50 min-h-screen w-full">
-      {/* Hero Section */}
-      <div className="w-full bg-gradient-to-r from-purple-700 to-orange-400 py-16 px-4 md:px-16 flex items-center" style={{minHeight: '350px'}}>
-        <div className="max-w-3xl text-left">
+      {/* Hero Section - truly edge-to-edge */}
+      <div className="w-screen relative left-1/2 right-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-700 to-orange-400 py-16 flex items-center justify-center" style={{minHeight: '350px'}}>
+        <div className="w-full max-w-5xl px-4 md:px-16 text-left">
           <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-4">Grow Your Career. Build the Future.</h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">
             Join our dynamic team and be part of a mission to transform businesses through innovative marketing, technology, and consulting solutions.
@@ -153,6 +154,8 @@ export default function Hiring() {
           </div>
         </div>
       </section>
+      {/* Footer Section */}
+      <Footer />
     </div>
   );
 }
