@@ -168,7 +168,7 @@ export default function CaseStudiesComponent() {
                       <li key={i}>{result}</li>
                     ))}
                   </ul>
-                  <Link to="/about" 
+                  <Link to="/contact" 
                   style={{ color: 'white' }}
                   className="inline-block bg-black hover:bg-gray-600 text-white visited:text-white focus:text-gray-200 active:text-gray-200 hover:text-gray-200 font-bold px-6 py-3 rounded-lg shadow transition mt-4">
                     Contact Us

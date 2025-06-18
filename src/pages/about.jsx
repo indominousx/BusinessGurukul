@@ -6,6 +6,14 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import MoreHero from "../components/morehero";
 import ClientShowcase from "../components/clientshowcase";
+import {
+  Users,
+  Settings,
+  Layers,
+  MessageSquare,
+  BarChart3,
+  Handshake
+} from "lucide-react";
 
 const bgImage = "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"; // Placeholder
 
@@ -37,7 +45,7 @@ export default function About() {
         <section className="w-full py-20 px-6 sm:px-12 bg-white">
   <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-10">
     <div className="md:w-1/2">
-      <h3 className="text-lg text-gray-800 font-medium mb-3">Our Vision</h3>
+      <h3 className="text-3xl text-gray-800 font-medium mb-3">Our Vision</h3>
       <h2 className="text-3xl sm:text-4xl font-extrabold text-orange-600 leading-tight">
         To become a trusted partner for businesses worldwide,
         recognized for excellence, innovation, and the impact we create.
@@ -183,42 +191,42 @@ and process development, and technology development.
           {/* Right: Perks List */}
           <div className="flex flex-col gap-8">
             <div className="flex items-start gap-4">
-              <span className="text-3xl mt-1">✅</span>
+              <Users className="w-8 h-8 text-orange-400 mt-1" />
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">Experienced Team</h3>
                 <p className="text-white/80">Our experts bring years of hands-on experience across industries and technologies.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="text-3xl mt-1">✅</span>
+              <Settings className="w-8 h-8 text-orange-400 mt-1" />
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">Customized Solutions</h3>
                 <p className="text-white/80">We tailor every solution to your unique business needs and goals.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="text-3xl mt-1">✅</span>
+              <Layers className="w-8 h-8 text-orange-400 mt-1" />
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">End-to-End Services</h3>
                 <p className="text-white/80">From strategy to execution, we cover the full spectrum for your success.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="text-3xl mt-1">✅</span>
+              <MessageSquare className="w-8 h-8 text-orange-400 mt-1" />
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">Transparent Communication</h3>
                 <p className="text-white/80">We keep you informed at every step with clear, honest updates.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="text-3xl mt-1">✅</span>
+              <BarChart3 className="w-8 h-8 text-orange-400 mt-1" />
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">Focus on Real Results</h3>
                 <p className="text-white/80">We measure our success by the tangible outcomes we deliver for you.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="text-3xl mt-1">✅</span>
+              <Handshake className="w-8 h-8 text-orange-400 mt-1" />
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">Long-Term Partnership Approach</h3>
                 <p className="text-white/80">We're committed to building lasting relationships, not just delivering projects.</p>
