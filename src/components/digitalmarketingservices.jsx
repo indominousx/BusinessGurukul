@@ -5,6 +5,7 @@ import Ahrefs from "../assets/images/Ahrefs.png";
 import ScreamingFrog from "../assets/images/screaming-frog.png";
 import GoogleTrends from "../assets/images/google-trends.png";
 import Canva from "../assets/images/canva-1.png";
+import GoogleAnalytics from "../assets/images/google-analytics.png";
 
 export default function MarketingServices() {
   return (
@@ -51,7 +52,7 @@ export default function MarketingServices() {
           {/* Card 3 */}
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
             <img
-              src="/path-to-your-icon/google-analytics.png"
+              src={GoogleAnalytics}
               alt="Google Analytics"
               className="mx-auto h-16 mb-6"
             />
