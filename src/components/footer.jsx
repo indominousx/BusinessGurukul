@@ -8,10 +8,12 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12">
           {/* Left: Call to Action */}
           <div className="mb-8 lg:mb-0">
-            <h2 className="text-4xl font-extrabold mb-4 text-blue-400">
+            <h2 className="text-4xl font-extrabold mb-4 text-white">
               Ready to Elevate Your Business?
             </h2>
-            <button className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105">
+            <button 
+            style={{ color: 'white' }}
+            className="bg-orange-500 hover:bg-orange-600 text-black font-bold py-3 px-8 rounded-full shadow-lg transition">
               Contact Us
             </button>
           </div>
