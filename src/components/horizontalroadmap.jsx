@@ -31,9 +31,11 @@ export default function RoadmapHorizontal() {
           Your Roadmap to Digital Success
         </h2>
         <p className="text-gray-700 max-w-2xl mx-auto">
-          Our roadmap outlines the steps we take to ensure your digital marketing success, from
-          strategy development to execution and analysis. We are committed to delivering results
-          that matter to your business.
+        At Business Gurukull, we combine strategic thinking with hands-on execution.
+       We take time to deeply understand your business, your customers, and your market.
+       Then, using a collaborative and transparent process, we create tailored solutions that drive real growth.
+       We don't just work for you — we work with you. Together, we build a roadmap for success that
+       is clear, actionable, and results-driven.
         </p>
       </div>
 

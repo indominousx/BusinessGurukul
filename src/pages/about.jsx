@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/footer";
 import HorizontalRoadmap from "../components/horizontalroadmap";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import MoreHero from "../components/morehero";
+import ClientShowcase from "../components/clientshowcase";
+
 const bgImage = "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"; // Placeholder
 
 export default function About() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
     <div className="bg-purple-50 min-h-screen w-full">
       {/* Hero Section */}
@@ -25,13 +34,29 @@ export default function About() {
       </div>
 
         {/* Vision Section */}
-        <section className="w-full py-12 px-4 md:px-12 bg-purple-50">
-        <h2 className="text-2xl font-bold text-purple-700 mb-4">Our Vision</h2>
-        <p className="text-lg text-gray-800">
-          To be the most trusted partner for businesses seeking growth, innovation, and digital transformation.<br /><br />
-          We envision a world where every business, regardless of size or industry, can harness the power of technology and smart marketing to achieve sustainable success. Our vision is to lead the way in digital transformation by providing innovative solutions, fostering a culture of continuous learning, and building long-lasting relationships with our clients. We strive to empower organizations to adapt, evolve, and thrive in an ever-changing digital landscape, making a positive impact on communities and industries worldwide.
-        </p>
-      </section>
+        <section className="w-full py-20 px-6 sm:px-12 bg-white">
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-10">
+    <div className="md:w-1/2">
+      <h3 className="text-lg text-gray-800 font-medium mb-3">Our Vision</h3>
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-orange-600 leading-tight">
+        To become a trusted partner for businesses worldwide,
+        recognized for excellence, innovation, and the impact we create.
+      </h2>
+    </div>
+    <div className="md:w-1/2">
+      <p className="text-lg text-gray-700 mt-2">
+      At Business Gurukull, we are dedicated to empowering businesses by providing a
+comprehensive suite of services designed to foster growth, innovation, and operational
+excellence. Founded in 2019 and headquartered in Pune, Maharashtra, our privately held
+company has grown into a team of 11-50 professionals, each bringing a wealth of experience in
+business consulting, project management, marketing management, sales management, system
+and process development, and technology development.
+
+      </p>
+    </div>
+  </div>
+</section>
+
 
         {/* Testimonial/Quote with Background Image */}
       <div
@@ -85,8 +110,12 @@ export default function About() {
       {/* Mission Section */}
       <section className="w-full py-12 px-4 md:px-12 bg-orange-50">
         <h2 className="text-4xl font-bold text-orange-500 mb-4">Our Mission</h2>
-        <p className="text-2xl text-gray-800">
-          To empower organizations with cutting-edge marketing, technology, and business consulting services that create real, sustainable impact.
+        <p className="text-2xl font-bold text-gray-800">
+        Empowering businesses to achieve sustainable growth through innovation, expertise, and personalized service.
+        </p>
+        <p className="py-4 text-lg font-semibold text-gray-800">
+        We are committed to delivering measurable results, building long-term partnerships,
+        and driving positive change across industries.
         </p>
       </section>
 
@@ -138,35 +167,69 @@ export default function About() {
         </div>
       </section>
 
-      {/* Company Stats Section */}
-      <section className="w-full py-16 px-4 md:px-16 bg-white flex flex-col items-center">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 w-full max-w-6xl text-center">
-          {/* Years in Market */}
-          <div className="flex flex-col items-center">
-            <span className="text-5xl mb-4 text-black">📅</span>
-            <span className="text-4xl font-extrabold mb-2 text-black">21+</span>
-            <span className="text-lg text-gray-700">Years in Market</span>
+
+      {/* Why Choose Us Section */}
+      <section className="w-full py-16 px-4 md:px-16 bg-blue-900 flex flex-col items-center">
+        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Left: Core Values Heading + Mission Paragraph */}
+          <div>
+            <h2 className="text-4xl font-extrabold text-orange-400 mb-8 text-left">Core Values</h2>
+            <p className="text-white text-base md:text-lg leading-relaxed mb-0">
+              Our mission is to serve as a catalyst for transformation, guiding businesses through the complexities of the modern market landscape. We understand that each organization faces unique challenges and opportunities; therefore, we tailor our strategies and solutions to meet the specific needs of our clients. Our approach combines deep industry knowledge with innovative methodologies to deliver results that are not only effective but also sustainable.<br /><br />
+              At Business Gurukull, we believe in building lasting partnerships. Our commitment to integrity, excellence, and customer-centricity drives us to go beyond conventional consulting. We immerse ourselves in our clients' businesses, working collaboratively to identify opportunities, overcome challenges, and implement strategies that lead to measurable success.<br /><br />
+              As a forward-thinking organization, we stay abreast of emerging trends and technologies, ensuring that our clients are equipped with the tools and insights necessary to stay competitive in a rapidly evolving marketplace. Whether it's through enhancing digital presence, streamlining operations, or developing innovative products and services, Business Gurukull is dedicated to helping businesses achieve their full potential.
+            </p>
           </div>
-          {/* Tech Professionals */}
-          <div className="flex flex-col items-center">
-            <span className="text-5xl mb-4 text-black">👥</span>
-            <span className="text-4xl font-extrabold mb-2 text-black">400+</span>
-            <span className="text-lg text-gray-700">Tech Professionals</span>
-          </div>
-          {/* Projects Delivered */}
-          <div className="flex flex-col items-center">
-            <span className="text-5xl mb-4 text-black">🚀</span>
-            <span className="text-4xl font-extrabold mb-2 text-black">1500+</span>
-            <span className="text-lg text-gray-700">Projects Delivered</span>
-          </div>
-          {/* Domains Served */}
-          <div className="flex flex-col items-center">
-            <span className="text-5xl mb-4 text-black">🤝</span>
-            <span className="text-4xl font-extrabold mb-2 text-black">20+</span>
-            <span className="text-lg text-gray-700">Domains Served</span>
+          {/* Right: Perks List */}
+          <div className="flex flex-col gap-8">
+            <div className="flex items-start gap-4">
+              <span className="text-3xl mt-1">✅</span>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-1">Experienced Team</h3>
+                <p className="text-white/80">Our experts bring years of hands-on experience across industries and technologies.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-3xl mt-1">✅</span>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-1">Customized Solutions</h3>
+                <p className="text-white/80">We tailor every solution to your unique business needs and goals.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-3xl mt-1">✅</span>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-1">End-to-End Services</h3>
+                <p className="text-white/80">From strategy to execution, we cover the full spectrum for your success.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-3xl mt-1">✅</span>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-1">Transparent Communication</h3>
+                <p className="text-white/80">We keep you informed at every step with clear, honest updates.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-3xl mt-1">✅</span>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-1">Focus on Real Results</h3>
+                <p className="text-white/80">We measure our success by the tangible outcomes we deliver for you.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-3xl mt-1">✅</span>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-1">Long-Term Partnership Approach</h3>
+                <p className="text-white/80">We're committed to building lasting relationships, not just delivering projects.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+      
+      <MoreHero/>
+      <ClientShowcase/>
 
       <Footer />
     </div>
