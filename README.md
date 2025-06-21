@@ -1,3 +1,13 @@
+1.This is developed in React + Vite 
+2.In the terminal of your code editor run 
+    npm install 
+3. Write the command 
+    npm run dev
+4. Open the local host link
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
