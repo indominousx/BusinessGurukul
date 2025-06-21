@@ -1,8 +1,10 @@
 import React from "react";
 import { Users, Star, ArrowRight, GraduationCap, Clock, Target, Award } from "lucide-react";
 import Footer from "../components/footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Internship() {
+  const navigate = useNavigate();
   return (
     <div className="bg-purple-50 min-h-screen w-full">
       {/* Hero Section - truly edge-to-edge */}
@@ -12,7 +14,7 @@ export default function Internship() {
           <p className="text-xl md:text-2xl text-white/90 mb-8">
             Kickstart your career with hands-on experience, mentorship, and real projects. Learn from industry experts and grow with us.
           </p>
-          <button className="inline-block bg-orange-500 hover:bg-orange-600 font-bold px-8 py-4 rounded-full shadow transition text-lg text-white">
+          <button className="inline-block bg-orange-500 hover:bg-orange-600 font-bold px-8 py-4 rounded-full shadow transition text-lg text-white" onClick={() => navigate('/contact')}>
             Start Your Journey
           </button>
         </div>
@@ -145,7 +147,7 @@ export default function Internship() {
                 <span className="text-orange-600 font-bold text-2xl">👉</span> Include: Resume, Cover Letter, Portfolio (if applicable)
               </p>
             </div>
-            <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg flex items-center gap-2 mx-auto">
+            <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg flex items-center gap-2 mx-auto" onClick={() => navigate('/contact')}>
               Start Your Journey <ArrowRight className="w-6 h-6" />
             </button>
             <p className="mt-6 text-xl font-semibold text-green-800">We look forward to helping you launch your career!</p>

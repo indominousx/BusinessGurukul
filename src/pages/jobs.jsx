@@ -1,6 +1,7 @@
 import React from "react";
 import { Users, Briefcase, Film, Code, ArrowRight, Search, Clock, MapPin } from "lucide-react";
 import Footer from "../components/footer";
+import { useNavigate } from "react-router-dom";
 
 const openings = [
   {
@@ -51,6 +52,7 @@ const openings = [
 ];
 
 export default function Jobs() {
+  const navigate = useNavigate();
   return (
     <div className="bg-purple-50 min-h-screen w-full">
       {/* Hero Section - truly edge-to-edge */}
@@ -60,7 +62,7 @@ export default function Jobs() {
           <p className="text-xl md:text-2xl text-white/90 mb-8">
             Join our dynamic team across multiple departments and help us transform businesses through innovative solutions.
           </p>
-          <button className="inline-block bg-orange-500 hover:bg-orange-600 font-bold px-8 py-4 rounded-full shadow transition text-lg text-white">
+          <button className="inline-block bg-orange-500 hover:bg-orange-600 font-bold px-8 py-4 rounded-full shadow transition text-lg text-white" onClick={() => navigate('/contact')}>
             View All Positions
           </button>
         </div>
@@ -87,7 +89,7 @@ export default function Jobs() {
                   </li>
                 ))}
               </ul>
-              <button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-3 px-6 rounded-full transition-all duration-300">
+              <button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-3 px-6 rounded-full transition-all duration-300" onClick={() => navigate('/contact')}>
                 Apply Now
               </button>
             </div>
@@ -153,8 +155,8 @@ export default function Jobs() {
           <p className="text-xl text-white/90 mb-8">
             We're always looking for talented individuals. Feel free to reach out to us at <a href="mailto:careers@businessgurukull.com" className="text-orange-300 font-semibold hover:underline">careers@businessgurukull.com</a>
           </p>
-          <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg flex items-center gap-2 mx-auto">
-            Apply Now <ArrowRight className="w-6 h-6" />
+          <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg flex items-center gap-2 mx-auto" onClick={() => navigate('/contact')}>
+            Apply Now
           </button>
         </div>
       </section>
