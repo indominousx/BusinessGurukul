@@ -174,11 +174,11 @@ export default function Navbar() {
 
           <Link
             to="/case-studies"
-            className="hover:text-orange-600 !text-gray-800"
+            className="hover:text-orange-600 !text-gray-800 transition-colors duration-200"
           >
             Case Studies
           </Link>
-          <Link to="/about" className="hover:text-orange-600 !text-gray-800">
+          <Link to="/about" className="hover:text-orange-600 !text-gray-800 transition-colors duration-200">
             About Us
           </Link>
 
@@ -267,8 +267,20 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <Link to="/case-studies" className="block py-2 px-2 text-lg font-semibold text-gray-800 hover:text-orange-600" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
-            <Link to="/about" className="block py-2 px-2 text-lg font-semibold text-gray-800 hover:text-orange-600" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+            <Link
+              to="/case-studies"
+              className="block py-2 px-2 text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors duration-200"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Case Studies
+            </Link>
+            <Link
+              to="/about"
+              className="block py-2 px-2 text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors duration-200"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About Us
+            </Link>
             <Link to="/contact" className="block py-2 px-2 text-xl font-semibold text-white bg-orange-500 rounded-full text-center mt-2 hover:bg-orange-600 transition" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link>
           </div>
         </div>

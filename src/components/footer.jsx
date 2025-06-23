@@ -15,7 +15,7 @@ export default function Footer() {
             <Link 
               to="/contact"
               style={{ color: 'white' }}
-              className="bg-orange-500 hover:bg-orange-600 text-black font-bold py-3 px-8 rounded shadow-lg transition text-lg mt-6"
+              className="bg-purple-700 hover:bg-purple-800 text-white font-semibold py-3 px-8 rounded shadow-lg transition text-lg mt-6"
             >
               Contact Us
             </Link>
