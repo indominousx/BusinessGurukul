@@ -68,3 +68,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Ensure navbar links are black and orange on hover */
+.navbar a {
+  color: #111 !important;
+}
+.navbar a:hover {
+  color: #ff6600 !important;
+}

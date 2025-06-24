@@ -61,7 +61,7 @@ export default function Navbar() {
     );
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-[100] bg-white shadow-md">
+    <nav className="navbar fixed top-0 left-0 w-full z-[100] bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0 text-2xl font-bold">
@@ -83,7 +83,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6 text-sm font-medium text-gray-800">
-          <Link to="/" className="hover:text-orange-600 !text-gray-800">
+          <Link to="/" className="text-gray-900 hover:text-orange-600">
             Home
           </Link>
 
@@ -174,11 +174,11 @@ export default function Navbar() {
 
           <Link
             to="/case-studies"
-            className="hover:text-orange-600 !text-gray-800"
+            className="text-gray-900 hover:text-orange-600"
           >
             Case Studies
           </Link>
-          <Link to="/about" className="hover:text-orange-600 !text-gray-800">
+          <Link to="/about" className="text-gray-900 hover:text-orange-600">
             About Us
           </Link>
 
