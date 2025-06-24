@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -11,11 +12,13 @@ export default function Footer() {
             <h2 className="text-4xl font-extrabold mb-4 text-white">
               Ready to Elevate Your Business?
             </h2>
-            <button 
-            style={{ color: 'white' }}
-            className="bg-orange-500 hover:bg-orange-600 text-black font-bold py-3 px-8 rounded-full shadow-lg transition">
+            <Link 
+              to="/contact"
+              style={{ color: 'white' }}
+              className="bg-purple-700 hover:bg-purple-800 text-white font-semibold py-3 px-8 rounded shadow-lg transition text-lg mt-6"
+            >
               Contact Us
-            </button>
+            </Link>
           </div>
 
           {/* Middle: Contact Details */}

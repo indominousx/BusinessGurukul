@@ -126,7 +126,7 @@ export default function CaseStudiesComponent() {
                       ))}
                     </ul>
                     <button
-                      className="mt-4 bg-orange-500 text-white font-bold px-4 py-2 rounded hover:bg-orange-600 transition"
+                      className="mt-4 bg-purple-700 text-white font-semibold px-4 py-2 rounded hover:bg-purple-800 transition"
                       onClick={e => {
                         e.stopPropagation();
                         setSelectedIdx(selectedIdx === idx ? null : idx);
@@ -170,7 +170,7 @@ export default function CaseStudiesComponent() {
                   </ul>
                   <Link to="/contact" 
                   style={{ color: 'white' }}
-                  className="inline-block bg-black hover:bg-gray-600 text-white visited:text-white focus:text-gray-200 active:text-gray-200 hover:text-gray-200 font-bold px-6 py-3 rounded-lg shadow transition mt-4">
+                  className="inline-block bg-purple-700 hover:bg-purple-800 text-white visited:text-white focus:text-gray-200 active:text-gray-200 hover:text-gray-200 font-semibold px-6 py-3 rounded-lg shadow transition mt-4 text-md">
                     Contact Us
                   </Link>
                 </div>
@@ -206,7 +206,7 @@ export default function CaseStudiesComponent() {
                     ))}
                   </ul>
                   <button
-                    className="mt-4 bg-orange-500 text-white font-bold px-4 py-2 rounded hover:bg-orange-600 transition"
+                    className="mt-4 bg-purple-700 text-white font-semibold px-4 py-2 rounded hover:bg-purple-800 transition"
                     onClick={e => {
                       e.stopPropagation();
                       setSelectedIdx(idx);
@@ -224,21 +224,21 @@ export default function CaseStudiesComponent() {
       <div className="max-w-5xl mx-auto mt-16">
         <h2 className="text-3xl font-extrabold text-center text-purple-700 mb-8">Result Overview</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="flex flex-col items-center bg-white rounded-2xl shadow p-6">
+          <div className="flex flex-col items-center bg-white rounded-2xl shadow p-6 transition-shadow hover:shadow-2xl">
             <span className="text-4xl mb-2">📈</span>
             <div className="text-xl font-bold text-blue-900 mb-1">300% Increase</div>
           </div>
-          <div className="flex flex-col items-center bg-white rounded-2xl shadow p-6">
+          <div className="flex flex-col items-center bg-white rounded-2xl shadow p-6 transition-shadow hover:shadow-2xl">
             <span className="text-4xl mb-2">🎯</span>
             <div className="text-xl font-bold text-blue-900 mb-1 whitespace-nowrap">
               2x Brand Awareness
             </div>
           </div>
-          <div className="flex flex-col items-center bg-white rounded-2xl shadow p-6">
+          <div className="flex flex-col items-center bg-white rounded-2xl shadow p-6 transition-shadow hover:shadow-2xl">
             <span className="text-4xl mb-2">⚙️</span>
             <div className="text-xl font-bold text-blue-900 mb-1">3x Conversion Rate</div>
           </div>
-          <div className="flex flex-col items-center bg-white rounded-2xl shadow p-6">
+          <div className="flex flex-col items-center bg-white rounded-2xl shadow p-6 transition-shadow hover:shadow-2xl">
             <span className="text-4xl mb-2">📦</span>
             <div className="text-xl font-bold text-blue-900 mb-1">50% Faster Ops</div>
           </div>

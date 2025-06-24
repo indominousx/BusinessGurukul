@@ -174,11 +174,19 @@ export default function Navbar() {
 
           <Link
             to="/case-studies"
+<<<<<<< HEAD
             className="text-gray-900 hover:text-orange-600"
           >
             Case Studies
           </Link>
           <Link to="/about" className="text-gray-900 hover:text-orange-600">
+=======
+            className="hover:text-orange-600 !text-gray-800 transition-colors duration-200"
+          >
+            Case Studies
+          </Link>
+          <Link to="/about" className="hover:text-orange-600 !text-gray-800 transition-colors duration-200">
+>>>>>>> 3ba26de0e8f97410eef15177041a7a72c25c6443
             About Us
           </Link>
 
@@ -186,7 +194,7 @@ export default function Navbar() {
             <Link
               to="/contact"
               style={{ color: 'white' }}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full text-sm font-semibold"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full text-md  font-semibold"
             >
               Contact Us
             </Link>
@@ -267,9 +275,21 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <Link to="/case-studies" className="block py-2 px-2 text-lg font-semibold text-gray-800 hover:text-orange-600" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
-            <Link to="/about" className="block py-2 px-2 text-lg font-semibold text-gray-800 hover:text-orange-600" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-            <Link to="/contact" className="block py-2 px-2 text-lg font-semibold text-white bg-orange-500 rounded-full text-center mt-2 hover:bg-orange-600 transition" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link>
+            <Link
+              to="/case-studies"
+              className="block py-2 px-2 text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors duration-200"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Case Studies
+            </Link>
+            <Link
+              to="/about"
+              className="block py-2 px-2 text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors duration-200"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About Us
+            </Link>
+            <Link to="/contact" className="block py-2 px-2 text-xl font-semibold text-white bg-orange-500 rounded-full text-center mt-2 hover:bg-orange-600 transition" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link>
           </div>
         </div>
       )}

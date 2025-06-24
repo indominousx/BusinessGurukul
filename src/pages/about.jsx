@@ -34,7 +34,7 @@ export default function About() {
           <Link
             to="/contact"
             style={{ color: 'white' }}
-            className="inline-block bg-orange-500 hover:bg-orange-600 font-bold px-8 py-4 rounded-full shadow transition text-lg"
+            className="inline-block bg-orange-500 hover:bg-orange-600 font-bold px-8 py-4 rounded-full shadow transition text-2xl"
           >
             Let's Collaborate
           </Link>
