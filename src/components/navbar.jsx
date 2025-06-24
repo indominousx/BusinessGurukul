@@ -174,19 +174,11 @@ export default function Navbar() {
 
           <Link
             to="/case-studies"
-<<<<<<< HEAD
             className="text-gray-900 hover:text-orange-600"
           >
             Case Studies
           </Link>
           <Link to="/about" className="text-gray-900 hover:text-orange-600">
-=======
-            className="hover:text-orange-600 !text-gray-800 transition-colors duration-200"
-          >
-            Case Studies
-          </Link>
-          <Link to="/about" className="hover:text-orange-600 !text-gray-800 transition-colors duration-200">
->>>>>>> 3ba26de0e8f97410eef15177041a7a72c25c6443
             About Us
           </Link>
 
