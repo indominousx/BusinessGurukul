@@ -82,7 +82,7 @@ export default function Contact() {
                   value={form.phone}
                   onChange={handlePhoneChange}
                   placeholder="+91"
-                  inputClass="!w-full py-2 px-3 text-sm rounded border-none focus:outline-none"
+                  inputClass="!w-full py-2 px-3 text-sm rounded border-none focus:outline-none !text-black"
                   containerClass="w-full border rounded"
                   buttonClass="bg-white border-r"
                 />
@@ -177,7 +177,7 @@ export default function Contact() {
         </div>
       </div>
       {/* Footer always at the bottom and above background */}
-      <footer className="relative z-20 w-full mt-auto">
+      <footer className="relative z-20 w-full">
         <Footer />
       </footer>
     </div>

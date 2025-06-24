@@ -32,8 +32,19 @@ const CaseStudies = () => {
           </div>
         </div>
       </div>
-      <div data-aos="fade-up">
-        <CaseStudiesComponent />
+      <div data-aos="fade-up" className="relative overflow-hidden">
+        {/* Background image behind showcased case studies */}
+        <img 
+          src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1920&q=80" 
+          alt="Case Studies Background" 
+          className="absolute inset-0 w-full h-full object-cover object-center z-0 opacity-30" 
+          style={{ pointerEvents: 'none' }}
+        />
+        {/* Optional: gradient overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-purple-50/60 to-blue-50/60 z-0" />
+        <div className="relative z-10">
+          <CaseStudiesComponent />
+        </div>
       </div>
       <div data-aos="fade-up">
         <Testimonials />

@@ -85,7 +85,7 @@ export default function CaseStudiesComponent() {
   const [selectedIdx, setSelectedIdx] = useState(null);
 
   return (
-    <div className="bg-gradient-to-br from-white via-blue-50 to-purple-50 py-10 px-6 sm:px-10 lg:px-24">
+    <div className="py-10 px-6 sm:px-10 lg:px-50">
       <h2 className="text-4xl font-extrabold text-center text-blue-900 mb-14 tracking-tight">
         Real Results, Real Impact
       </h2>
