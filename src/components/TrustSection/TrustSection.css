@@ -1,0 +1,97 @@
+/* File: src/components/TrustSection/TrustSection.css */
+
+.trust-section {
+  padding: 5rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.trust-section-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.trust-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.trust-section-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Value Points Grid Layout */
+.value-points-grid {
+  display: grid;
+  max-width: 1280px;
+  margin: 0 auto;
+  /* 4 columns on desktop */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* Individual Value Point Card */
+.value-point-card {
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.value-point-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-icon {
+  height: 60px; /* Adjust as needed */
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.value-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #222;
+}
+
+.value-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Responsive Design */
+
+/* For tablets: 2x2 grid */
+@media (max-width: 992px) {
+  .value-points-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .trust-section-title {
+    font-size: 2rem;
+  }
+}
+
+/* For mobile: single column */
+@media (max-width: 576px) {
+  .value-points-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .trust-section {
+    padding: 3rem 1rem;
+  }
+  
+  .trust-section-title {
+    font-size: 1.8rem;
+  }
+  
+  .trust-section-subtitle {
+    font-size: 1rem;
+  }
+} 

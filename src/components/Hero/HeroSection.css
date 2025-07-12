@@ -1,0 +1,171 @@
+/* File: src/components/Hero/HeroSection.css */
+
+/* Main hero section container */
+.hero-section {
+  position: relative;
+  height: 95vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dark overlay for image contrast */
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  background-color: rgba(25, 25, 25, 0.6); /* Adjust darkness here */
+  z-index: 1;
+}
+
+/* Content layout (text and form) */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  padding: 2rem;
+  gap: 3rem;
+}
+
+.hero-text-container {
+  flex-basis: 55%;
+}
+
+.hero-headline {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-subheadline {
+  font-size: 1.1rem;
+  margin: 1rem 0 2rem;
+  max-width: 90%;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.cta-button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+}
+.cta-button.primary { background-color: #ff6b6b; color: white; border: none; }
+.cta-button.secondary { background-color: transparent; border: 2px solid white; color: white; }
+
+/* Form container */
+.hero-form-container {
+  flex-basis: 40%;
+}
+
+.enquiry-form-wrapper {
+  background: #ffffff;
+  color: #111;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background: #f9f9f9;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #e55a5a;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .hero-content { 
+    flex-direction: column; 
+    text-align: center; 
+    gap: 2rem;
+  }
+  .hero-text-container { 
+    margin-bottom: 2rem; 
+    flex-basis: 100%;
+  }
+  .hero-form-container {
+    flex-basis: 100%;
+  }
+  .hero-subheadline { max-width: 100%; }
+  .hero-cta-buttons { justify-content: center; }
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content {
+    padding: 1rem;
+  }
+  .hero-headline {
+    font-size: 2rem;
+  }
+  .hero-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cta-button {
+    width: 100%;
+    max-width: 250px;
+  }
+} 
