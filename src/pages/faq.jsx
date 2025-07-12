@@ -50,7 +50,7 @@ export default function FAQPage() {
               Call Us: 8999685423
             </a>
             <a
-              href="mailto:Office@businessgurukull.com"
+              href="mailto:office@businessgurukull.com"
               className="bg-purple-600 hover:bg-purple-700 !text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold transition-colors duration-200 text-base md:text-lg w-full sm:w-auto text-center"
             >
               Email Us
