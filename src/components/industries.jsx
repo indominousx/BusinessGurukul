@@ -1,130 +1,122 @@
 import { useState, useEffect } from "react";
 
-import bankingImage from "../assets/images/Manufacturing-indus.png";
-import foodImage from "../assets/images/In-entertainment.webp";
-import healthcareImage from "../assets/images/In-technology.avif";
-import manufacturingImage from "../assets/images/In-realestate.webp";
-import travelImage from "../assets/images/In-travel.webp";
-import gorwscaled from "../assets/images/grow-scaled-1.jpg";
-import SEO from "../assets/images/SEO-for-USA-Based-Home-Decor-Brand-to-Secure-Revenue-Drive-Conversion@2x.png";
+import realEstateImg from "../assets/images/In-realestate.webp";
+import solarImg from "../assets/images/Manufacturing-indus.png";
+import educationImg from "../assets/images/In-technology.avif";
+import healthImg from "../assets/images/SEO-for-USA-Based-Home-Decor-Brand-to-Secure-Revenue-Drive-Conversion@2x.png";
+import manufacturingImg from "../assets/images/SEO-for-USA-Based-Home-Decor-Brand-to-Secure-Revenue-Drive-Conversion@2x.png";
 
 const industries = [
-  { title: "Banking", image: bankingImage },
-  { title: "Food and Beverages", image: foodImage },
-  { title: "Healthcare", image: healthcareImage },
-  { title: "Manufacturing", image: manufacturingImage },
-  { title: "Travel", image: travelImage },
-  { title: "Automotive", image: gorwscaled },
-  { title: "Retail", image: SEO },
-  { title: "Education", image: gorwscaled },
-  { title: "Entertainment", image: gorwscaled },
-  { title: "Real Estate", image: gorwscaled },
+  { title: "Real Estate", image: realEstateImg },
+  { title: "Solar Energy", image: solarImg },
+  { title: "Education Sector", image: educationImg },
+  { title: "Health Sector", image: healthImg },
+  { title: "Manufacturer", image: manufacturingImg },
 ];
 
 export default function IndustriesSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [imagesPerView, setImagesPerView] = useState(4);
-
-  useEffect(() => {
-    const updateImagesPerView = () => {
-      const width = window.innerWidth;
-      if (width < 640) setImagesPerView(1); // Mobile
-      else if (width < 1024) setImagesPerView(2); // Tablet
-      else if (width < 1280) setImagesPerView(3); // Small desktop
-      else setImagesPerView(4); // Large desktop
-    };
-
-    updateImagesPerView();
-    window.addEventListener("resize", updateImagesPerView);
-    return () => window.removeEventListener("resize", updateImagesPerView);
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide(
-        (prev) => (prev + 1) % Math.ceil(industries.length / imagesPerView)
-      );
-    }, 3000);
-
+      setCurrentSlide((prev) => (prev + 1) % industries.length);
+    }, 4000);
     return () => clearInterval(interval);
-  }, [imagesPerView]);
+  }, []);
 
   return (
-    <div className="flex">
-      <div className="w-1/20"></div>
-      <div className="w-19/20 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 rounded-l-3xl p-8 flex flex-col lg:flex-row overflow-hidden shadow-lg">
+    <div className="flex items-center justify-center min-h-screen bg-transparent text-white">
+      <div className="w-11/12 max-w-7xl p-10 flex flex-col lg:flex-row items-center justify-center shadow-2xl" style={{ background: '#123524', borderRadius: '1.5rem' }}>
         {/* Left Content */}
-        <div className="lg:w-1/3 flex flex-col justify-center text-white">
+        <div className="lg:w-2/5 flex flex-col justify-center text-white pr-6 mb-10 lg:mb-0">
           <h2 className="text-4xl font-extrabold mb-6">Industries We Cater</h2>
-          <p className="text-gray-300 mb-8 leading-relaxed">
-            Our digital marketing solutions meet the needs of various
-            industries. With advanced techniques, our digital marketing agency
-            helps in Healthcare, Finance, Education, Retail, Travel, and
-            Automotive to enhance customer engagement, streamline operations,
-            and drive growth.
+          <p className="text-gray-300 mb-6 leading-relaxed text-sm">
+            From local startups to established enterprises, Business Gurukull
+            empowers a wide range of industries with customized digital, video,
+            tech, and consulting solutions.
+          </p>
+          <p className="text-gray-300 mb-8 leading-relaxed text-sm">
+            We understand that each industry has unique challenges—and that’s
+            why we don’t believe in one-size-fits-all strategies. Our team
+            brings deep domain knowledge, innovative thinking, and practical
+            execution to help businesses across sectors grow faster, operate
+            smarter, and market better in today's competitive landscape.
           </p>
           <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-full w-fit hover:from-orange-600 hover:to-orange-700 shadow-lg transform hover:scale-105 transition-transform">
             View All
           </button>
         </div>
 
-        {/* Right Slideshow */}
-        <div className="lg:w-2/3 mt-8 lg:mt-0 relative flex items-center justify-center">
-          <div className="w-full h-96 overflow-hidden relative rounded-2xl shadow-2xl flex">
-            <div
-              className="flex transition-transform duration-700 ease-in-out"
-              style={{
-                transform: `translateX(-${
-                  (currentSlide * 100) / imagesPerView
-                }%)`,
-              }}
-            >
-              {industries.map((industry, index) => (
+        {/* Right Carousel */}
+        <div className="lg:w-3/5 relative flex items-center justify-center" style={{ perspective: "1200px" }}>
+          <div className="relative w-full h-96 flex items-center justify-center overflow-visible">
+            {industries.map((industry, index) => {
+              const total = industries.length;
+              const prev = (currentSlide - 1 + total) % total;
+              const next = (currentSlide + 1) % total;
+
+              let transform = "translateX(200%) scale(0.8) rotateY(40deg)";
+              let zIndex = 1;
+              let opacity = 0;
+
+              if (index === currentSlide) {
+                transform = "translateX(0%) scale(1) rotateY(0deg)";
+                zIndex = 3;
+                opacity = 1;
+              } else if (index === prev) {
+                transform = "translateX(-80%) scale(0.8) rotateY(-30deg)";
+                zIndex = 2;
+                opacity = 0.5;
+              } else if (index === next) {
+                transform = "translateX(80%) scale(0.8) rotateY(30deg)";
+                zIndex = 2;
+                opacity = 0.8;
+              }
+
+              return (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-1/4 h-full relative px-4"
-                  style={{ width: `${100 / imagesPerView}%` }}
+                  className="absolute w-64 h-80 transition-all duration-700 ease-in-out"
+                  style={{
+                    transform,
+                    opacity,
+                    zIndex,
+                  }}
                 >
                   <img
                     src={industry.image}
                     alt={industry.title}
-                    className="w-full h-full object-cover rounded-lg transform hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover rounded-lg shadow-xl"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4 text-center text-xs">
-                    <p className="text-orange-500 font-bold text-lg">
-                      {industry.title}
-                    </p>
-                  </div>
+                  <p className="text-center text-orange-500 font-bold mt-2">
+                    {industry.title}
+                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
+              );
+            })}
 
-          {/* Navigation Buttons */}
-          <button
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg transition-transform hover:scale-110"
-            onClick={() =>
-              setCurrentSlide((prev) =>
-                prev <= 0
-                  ? Math.ceil(industries.length / imagesPerView) - 1
-                  : prev - 1
-              )
-            }
-          >
-            &#8249;
-          </button>
-          <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg transition-transform hover:scale-110"
-            onClick={() =>
-              setCurrentSlide((prev) =>
-                prev >= Math.ceil(industries.length / imagesPerView) - 1
-                  ? 0
-                  : prev + 1
-              )
-            }
-          >
-            &#8250;
-          </button>
+            {/* Navigation */}
+            <button
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg z-30"
+              onClick={() =>
+                setCurrentSlide((prev) =>
+                  prev <= 0 ? industries.length - 1 : prev - 1
+                )
+              }
+            >
+              &#8249;
+            </button>
+            <button
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg z-30"
+              onClick={() =>
+                setCurrentSlide((prev) =>
+                  prev >= industries.length - 1 ? 0 : prev + 1
+                )
+              }
+            >
+              &#8250;
+            </button>
+          </div>
         </div>
       </div>
     </div>
