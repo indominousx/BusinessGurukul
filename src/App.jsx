@@ -12,6 +12,7 @@ import Internship from "./pages/internship";
 import CaseStudies from "./pages/CaseStudies";
 import About from "./pages/about";
 import Contact from "./pages/contact";
+import FAQPage from "./pages/faq";
 import "./App.css";
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<FAQPage />} />
         </Routes>
       </div>
     </Router>

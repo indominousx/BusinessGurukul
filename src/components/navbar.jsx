@@ -181,6 +181,9 @@ export default function Navbar() {
           <Link to="/about" className="text-gray-900 hover:text-orange-600">
             About Us
           </Link>
+          <Link to="/faq" className="text-gray-900 hover:text-orange-600">
+            FAQ
+          </Link>
 
           <div className="ml-auto">
             <Link
@@ -280,6 +283,13 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             >
               About Us
+            </Link>
+            <Link
+              to="/faq"
+              className="block py-2 px-2 text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors duration-200"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              FAQ
             </Link>
             <Link to="/contact" className="block py-2 px-2 text-xl font-semibold text-white bg-orange-500 rounded-full text-center mt-2 hover:bg-orange-600 transition" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link>
           </div>
