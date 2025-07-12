@@ -13,6 +13,9 @@ import IndustriesSection from "../components/industries";
 import Roadmap from "../components/roadmap";
 import DigitalPresenceCTA from "../components/reachus";
 import ClientTestimonials from "../components/ClientTestimonials";
+import VideoAdsServices from "../components/VideoAdsServices";
+import Technologyservices from "../components/technologyservices";
+import Businessservices from "../components/businessservices";
   
 export default function Home() {
   return (
@@ -24,9 +27,10 @@ export default function Home() {
       <MoreHero />
       <ClientShowcase />
       <ProblemSolutionSection />
-      <Projects />
-      <Digitalmarketingservices />
       <YourBusiness />
+      <VideoAdsServices />
+      <Technologyservices />
+      <Businessservices />
       <IndustriesSection />
       <Roadmap />
       <DigitalPresenceCTA />
