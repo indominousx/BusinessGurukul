@@ -4,10 +4,10 @@ import './CoreServicesGrid.css';
 
 // For now, using placeholder icons. You can replace these with actual SVG icons or images
 // from your assets folder when available
-const digitalMarketingIcon = "https://via.placeholder.com/50x50/ff6b6b/ffffff?text=DM";
-const videoAdsIcon = "https://via.placeholder.com/50x50/4ecdc4/ffffff?text=VA";
-const techDevIcon = "https://via.placeholder.com/50x50/45b7d1/ffffff?text=TD";
-const consultingIcon = "https://via.placeholder.com/50x50/96ceb4/ffffff?text=BC";
+const digitalMarketingIcon = "https://i.postimg.cc/DZ7VdTzP/digitalmarketingimage.jpg";
+const videoAdsIcon = "https://i.postimg.cc/prZ1WhQw/videoorads.webp";
+const techDevIcon = "https://i.postimg.cc/zfCwYmFM/technologyimages.jpg";
+const consultingIcon = "https://i.postimg.cc/SNHcXQZ3/businessconsulting.jpg";
 
 // Data for the four service pillars, as specified in the document.
 const servicesData = [
