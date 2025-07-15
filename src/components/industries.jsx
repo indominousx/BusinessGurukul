@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import realEstateImg from "../assets/images/In-realestate.webp";
 import solarImg from "../assets/images/Manufacturing-indus.png";
@@ -16,19 +16,34 @@ const industries = [
 
 export default function IndustriesSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const carouselRef = useRef(null);
+  const intervalRef = useRef(null);
+
+  const total = industries.length;
+
+  const startAutoPlay = () => {
+    intervalRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % total);
+    }, 3000);
+  };
+
+  const stopAutoPlay = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % industries.length);
-    }, 4000);
-    return () => clearInterval(interval);
+    startAutoPlay();
+    return () => stopAutoPlay();
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-transparent text-white">
-      <div className="w-11/12 max-w-7xl p-10 flex flex-col lg:flex-row items-center justify-center shadow-2xl" style={{ background: '#123524', borderRadius: '1.5rem' }}>
+    <div className="w-screen min-h-screen flex items-center justify-center bg-transparent text-white" style={{ overflowX: 'hidden' }}>
+      <div
+        className="w-full h-[600px] flex flex-col lg:flex-row items-center justify-center shadow-2xl"
+        style={{ background: "#123524", borderRadius: 0 }}
+      >
         {/* Left Content */}
-        <div className="lg:w-2/5 flex flex-col justify-center text-white pr-6 mb-10 lg:mb-0">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center text-white px-8 h-full">
           <h2 className="text-4xl font-extrabold mb-6">Industries We Cater</h2>
           <p className="text-gray-300 mb-6 leading-relaxed text-sm">
             From local startups to established enterprises, Business Gurukull
@@ -48,10 +63,15 @@ export default function IndustriesSection() {
         </div>
 
         {/* Right Carousel */}
-        <div className="lg:w-3/5 relative flex items-center justify-center" style={{ perspective: "1200px" }}>
+        <div
+          className="w-full lg:w-1/2 relative flex items-center justify-center h-full"
+          style={{ perspective: "1200px" }}
+          ref={carouselRef}
+          onMouseEnter={stopAutoPlay}
+          onMouseLeave={startAutoPlay}
+        >
           <div className="relative w-full h-96 flex items-center justify-center overflow-visible">
             {industries.map((industry, index) => {
-              const total = industries.length;
               const prev = (currentSlide - 1 + total) % total;
               const next = (currentSlide + 1) % total;
 
@@ -70,7 +90,7 @@ export default function IndustriesSection() {
               } else if (index === next) {
                 transform = "translateX(80%) scale(0.8) rotateY(30deg)";
                 zIndex = 2;
-                opacity = 0.8;
+                opacity = 0.5;
               }
 
               return (
@@ -81,6 +101,7 @@ export default function IndustriesSection() {
                     transform,
                     opacity,
                     zIndex,
+                    transition: "all 0.7s ease-in-out",
                   }}
                 >
                   <img
@@ -100,7 +121,7 @@ export default function IndustriesSection() {
               className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg z-30"
               onClick={() =>
                 setCurrentSlide((prev) =>
-                  prev <= 0 ? industries.length - 1 : prev - 1
+                  prev <= 0 ? total - 1 : prev - 1
                 )
               }
             >
@@ -110,7 +131,7 @@ export default function IndustriesSection() {
               className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg z-30"
               onClick={() =>
                 setCurrentSlide((prev) =>
-                  prev >= industries.length - 1 ? 0 : prev + 1
+                  prev >= total - 1 ? 0 : prev + 1
                 )
               }
             >
