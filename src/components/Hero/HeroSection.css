@@ -3,50 +3,64 @@
 /* Main hero section container */
 .hero-section {
   position: relative;
-  height: 95vh;
-  width: 100%;
+  /* Space below fixed navbar */
+  margin-top: 3rem;
+  min-height: calc(100vh - 3rem);
+  width: 100vw;
+  max-width: 100%;
   background-size: cover;
   background-position: center;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5rem 1rem 2rem; /* Add padding to prevent overlap with navigation bar */
+  overflow: hidden;
+  box-sizing: border-box;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  padding-top: clamp(8rem, 10vw, 12rem); /* Adjust padding further */
+}
+
+/* Ensure black tint overlay is applied only to the background */
+.hero-section {
+  position: relative;
+  z-index: 0; /* Ensure background tint is below other elements */
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(25, 25, 25, 0.6);
+  z-index: -1; /* Move overlay below all content */
 }
 
 /* Dark overlay for image contrast */
-.hero-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  height: 100%; width: 100%;
-  background-color: rgba(25, 25, 25, 0.6); /* Adjust darkness here */
-  z-index: 1;
-}
-
-/* Content layout (text and form) */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1280px;
-  padding: 2rem;
-  gap: 3rem;
-}
 
 .hero-text-container {
-  flex-basis: 55%;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1; /* Ensure text and form are above the overlay */
 }
 
 .hero-headline {
-  font-size: 3.2rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 700;
   line-height: 1.2;
 }
 
 .hero-subheadline {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   margin: 1rem 0 2rem;
   max-width: 90%;
 }
@@ -54,6 +68,7 @@
 .hero-cta-buttons {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .cta-button {
@@ -62,6 +77,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s;
+  white-space: nowrap;
 }
 .cta-button:hover {
   transform: translateY(-2px);
@@ -71,20 +87,49 @@
 
 /* Form container */
 .hero-form-container {
-  flex-basis: 40%;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 400px;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+  border-radius: 16px;
+  max-height: none; /* Allow the form to expand fully */
+  overflow: visible; /* Remove scrolling */
+  margin: 0 auto;
 }
+
+@media (max-width: 1023px) {
+  .hero-form-container {
+    display: none !important;
+  }
+}
+
 
 .enquiry-form-wrapper {
   background: #ffffff;
   color: #111;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+  width: 100%;
+  max-height: none; /* Remove height restriction */
+  overflow: visible; /* Ensure no scrolling */
+}
+
+/* Add padding to the bottom of the form */
+.enquiry-form-wrapper {
+  padding-bottom: 2rem; /* Add extra space at the bottom */
 }
 
 .form-title {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   margin-bottom: 1.5rem;
   font-weight: 600;
 }
@@ -98,15 +143,22 @@
   margin-bottom: 0.5rem;
   font-weight: 500;
   color: #333;
+  font-size: 0.9rem;
 }
-
 .form-group input, .form-group select, .form-group textarea {
   width: 100%;
-  padding: 12px;
+  padding: 10px 12px;
   border-radius: 4px;
   border: 1px solid #ddd;
-  font-size: 1rem;
+  font-size: 0.95rem;
   background: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  min-height: 60px;
+  max-height: 80px;
+  resize: vertical;
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
@@ -117,12 +169,12 @@
 
 .submit-button {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   background-color: #ff6b6b;
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -133,39 +185,485 @@
 }
 
 /* Responsive design */
+@media (max-width: 1200px) {
+  .hero-content {
+    gap: 1.5rem;
+  }
+  .hero-form-container {
+    max-width: 350px;
+    min-width: 280px;
+  }
+}
+
 @media (max-width: 900px) {
   .hero-content { 
     flex-direction: column; 
     text-align: center; 
     gap: 2rem;
+    align-items: center;
+    min-height: auto;
   }
   .hero-text-container { 
-    margin-bottom: 2rem; 
-    flex-basis: 100%;
+    flex: none;
+    width: 100%;
+    max-width: 600px;
+    justify-content: flex-start;
   }
   .hero-form-container {
-    flex-basis: 100%;
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+    align-items: flex-start;
   }
-  .hero-subheadline { max-width: 100%; }
-  .hero-cta-buttons { justify-content: center; }
-  .hero-headline {
-    font-size: 2.5rem;
+  .hero-subheadline { 
+    max-width: 100%; 
+  }
+  .hero-cta-buttons { 
+    justify-content: center; 
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-content {
+    padding-bottom: 8rem; /* Add space for mobile form header */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding-bottom: 8rem; /* Add space for swipe-up form */
   }
 }
 
 @media (max-width: 600px) {
+  .hero-section {
+    padding: 0.5rem;
+    padding-top: 4rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
   .hero-content {
     padding: 1rem;
+    width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
+    padding-bottom: 8rem; /* Space for mobile form */
   }
-  .hero-headline {
-    font-size: 2rem;
+}
+  .enquiry-form-wrapper {
+    padding: 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
   }
   .hero-cta-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 0.75rem;
   }
   .cta-button {
     width: 100%;
-    max-width: 250px;
+    max-width: 280px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
   }
-} 
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: auto;
+    padding: 0.25rem;
+    padding-top: 4rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+  .hero-content {
+    padding: 0.75rem;
+    gap: 1.5rem;
+    width: calc(100vw - 1.5rem);
+    max-width: calc(100vw - 1.5rem);
+    padding-bottom: 8rem; /* Space for mobile form */
+  }
+  .enquiry-form-wrapper {
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .form-group {
+    margin-bottom: 0.75rem;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .submit-button {
+    padding: 10px;
+    font-size: 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero-content {
+    padding: 0.5rem;
+    width: calc(100vw - 1rem);
+    max-width: calc(100vw - 1rem);
+  }
+  .enquiry-form-wrapper {
+    padding: 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Simple Mobile Form - Clean and Direct */
+@media (max-width: 1023px) {
+  .mobile-form-container {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 400px !important;
+    margin: 2rem auto 0 auto !important;
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+    border: 1px solid #e0e0e0 !important;
+  }
+
+  .mobile-form-container .mobile-form-header {
+    display: none !important;
+  }
+
+  .mobile-form-container .mobile-form-backdrop {
+    display: none !important;
+  }
+
+  .mobile-form-container .mobile-form-close {
+    display: none !important;
+  }
+
+  .mobile-form-container .mobile-form-content {
+    position: relative !important;
+    transform: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    z-index: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  .mobile-form-container .mobile-form-content.expanded {
+    transform: none !important;
+  }
+
+  .mobile-form-container .mobile-form-content form {
+    padding: 0 !important;
+    background: transparent !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .mobile-form-container .mobile-form-content .form-title {
+    text-align: center !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    color: #333 !important;
+    margin-bottom: 1.5rem !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
+  }
+}
+
+/* Backdrop for floating form */
+@media (max-width: 1023px) {
+  .mobile-form-container .mobile-form-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    z-index: 9997 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+  }
+
+  .mobile-form-container .mobile-form-backdrop.visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Close button */
+  .mobile-form-container .mobile-form-close {
+    position: absolute !important;
+    top: 10px !important;
+    right: 15px !important;
+    background: #f0f0f0 !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 32px !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    font-size: 20px !important;
+    color: #666 !important;
+    transition: all 0.3s ease !important;
+    z-index: 10000 !important;
+  }
+
+  .mobile-form-container .mobile-form-close:hover {
+    background: #e0e0e0 !important;
+    color: #333 !important;
+  }
+}
+
+/* Mobile form field styling - Enhanced with Container Specificity */
+@media (max-width: 1023px) {
+  .mobile-form-container .mobile-form-content .form-group {
+    margin-bottom: 1.25rem !important;
+    display: block !important;
+  }
+
+  .mobile-form-container .mobile-form-content .form-group label {
+    display: block !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    font-size: 0.95rem !important;
+  }
+
+  .mobile-form-container .mobile-form-content .form-group input,
+  .mobile-form-container .mobile-form-content .form-group select,
+  .mobile-form-container .mobile-form-content .form-group textarea {
+    width: 100% !important;
+    padding: 0.875rem !important;
+    border: 2px solid #e0e0e0 !important;
+    border-radius: 10px !important;
+    font-size: 1rem !important;
+    box-sizing: border-box !important;
+    background: #f9f9f9 !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+  }
+
+  .mobile-form-container .mobile-form-content .form-group input:focus,
+  .mobile-form-container .mobile-form-content .form-group select:focus,
+  .mobile-form-container .mobile-form-content .form-group textarea:focus {
+    outline: none !important;
+    border-color: #ff6b6b !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1) !important;
+  }
+
+  .mobile-form-container .mobile-form-content .submit-button {
+    width: 100% !important;
+    padding: 1rem !important;
+    background: #ff6b6b !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    margin-top: 1.5rem !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    display: block !important;
+  }
+
+  .mobile-form-container .mobile-form-content .submit-button:hover {
+    background: #e55a5a !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3) !important;
+  }
+}
+
+/* Simple Mobile Form Responsive Adjustments */
+@media (max-width: 768px) {
+  .mobile-form-container {
+    margin: 1.5rem auto 0 auto !important;
+    padding: 1.25rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-form-container {
+    margin: 1rem auto 0 auto !important;
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .mobile-form-container {
+    margin: 0.75rem auto 0 auto !important;
+    padding: 0.875rem !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .mobile-form-container {
+    margin: 0.5rem auto 0 auto !important;
+    padding: 0.75rem !important;
+  }
+}
+
+/* Remove all enhanced slider features - Keep it simple */
+
+/* Ensure Mobile Form Displays Properly - Override any conflicting styles */
+.block.lg\:hidden {
+  display: block !important;
+}
+
+@media (min-width: 1024px) {
+  .block.lg\:hidden {
+    display: none !important;
+  }
+}
+
+/* Mobile Form Container Visibility */
+@media (max-width: 1023px) {
+  .mobile-form-header,
+  .mobile-form-content {
+    display: block !important;
+    visibility: visible !important;
+  }
+}
+
+/* CRITICAL: Mobile Form Container - Force Display with Maximum Specificity */
+.mobile-form-container {
+  display: block !important;
+  position: relative !important;
+}
+
+/* Hide mobile form on desktop */
+@media (min-width: 1024px) {
+  .mobile-form-container {
+    display: none !important;
+  }
+}
+
+/* Force mobile form visibility on all mobile devices */
+@media (max-width: 1023px) {
+  .mobile-form-container {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 0 !important;
+    overflow: visible !important;
+  }
+  
+  /* Override any conflicting Tailwind classes */
+  .mobile-form-container,
+  .mobile-form-container * {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* DEBUG: Visual indicators for mobile slider (remove after testing) */
+@media (max-width: 1023px) {
+  .mobile-form-container {
+    outline: 2px solid red !important;
+    background: rgba(255, 0, 0, 0.1) !important;
+  }
+  
+  .mobile-form-container .mobile-form-header {
+    outline: 2px solid blue !important;
+    background: #ff6b6b !important;
+  }
+}
+
+/* Force override any global styles that might interfere */
+.mobile-form-container,
+.mobile-form-container * {
+  box-sizing: border-box !important;
+}
+
+/* Ensure mobile container is always visible on mobile */
+@media (max-width: 1023px) {
+  .mobile-form-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none !important;
+    z-index: 9000 !important;
+  }
+  
+  .mobile-form-container .mobile-form-header,
+  .mobile-form-container .mobile-form-content,
+  .mobile-form-container .mobile-form-backdrop {
+    pointer-events: auto !important;
+  }
+}
+
+/* TEST: Elegant slider test indicator */
+@media (max-width: 1023px) {
+  .hero-section::after {
+    content: "✨ ELEGANT SLIDER ACTIVE ✨";
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    z-index: 10001;
+    font-size: 9px;
+    pointer-events: none;
+    display: block;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hero-text-container {
+    flex: 1;
+    text-align: left;
+    max-width: 50%;
+  }
+  .hero-form-container {
+    flex: 1;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: 0;
+    height: 600px; /* Increased height */
+  }
+}
+
+/* Increase hero content height */
+.hero-content {
+  height: calc(1.5(100vh - 6rem)); /* Adjust height to occupy more space */
+}
+
+.hero-content {
+  height: 100%; /* Match hero content height with hero overlay height */
+}
