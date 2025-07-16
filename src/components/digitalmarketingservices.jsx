@@ -24,7 +24,8 @@ export default function MarketingServices() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Card 1 */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 text-center">
+          
             <img src={Semrush} alt="Semrush" className="mx-auto h-16 mb-6" />
             <h3 className="text-2xl font-semibold mb-3 text-gray-800">
               Semrush

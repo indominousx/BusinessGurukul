@@ -67,10 +67,10 @@ export default function YourBusiness() {
               <div className="bg-purple-600 p-4 rounded-full mb-4 flex items-center justify-center text-white text-2xl">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 text-left w-full">
                 {service.title}
               </h3>
-              <p className="text-gray-700 mb-4 text-sm text-center">
+              <p className="text-gray-700 mb-4 text-sm text-left w-full">
                 {service.desc}
               </p>
             </div>

@@ -5,7 +5,7 @@ import './CoreServicesGrid.css'; // Shares the stylesheet with its parent
 // It accepts props for the icon, title, description, and link.
 const ServicePillarCard = ({ iconSrc, title, description, ctaLink }) => {
   return (
-    <div className="service-pillar-card text-center">
+    <div className="service-pillar-card">
       <div className="card-icon-container">
         <img 
           src={iconSrc} 

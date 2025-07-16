@@ -110,33 +110,33 @@ export default function IndustriesSection() {
                     className="w-full h-full object-cover rounded-lg shadow-xl"
                   />
                   <p className="text-center text-orange-500 font-bold mt-2">
-                    {industry.title}
-                  </p>
+                      {industry.title}
+                    </p>
                 </div>
               );
             })}
 
             {/* Navigation */}
-            <button
+          <button
               className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg z-30"
-              onClick={() =>
-                setCurrentSlide((prev) =>
+            onClick={() =>
+              setCurrentSlide((prev) =>
                   prev <= 0 ? total - 1 : prev - 1
-                )
-              }
-            >
-              &#8249;
-            </button>
-            <button
+              )
+            }
+          >
+            &#8249;
+          </button>
+          <button
               className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white p-3 rounded-full hover:bg-gray-700 shadow-lg z-30"
-              onClick={() =>
-                setCurrentSlide((prev) =>
+            onClick={() =>
+              setCurrentSlide((prev) =>
                   prev >= total - 1 ? 0 : prev + 1
-                )
-              }
-            >
-              &#8250;
-            </button>
+              )
+            }
+          >
+            &#8250;
+          </button>
           </div>
         </div>
       </div>
