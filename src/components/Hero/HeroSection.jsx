@@ -4,7 +4,7 @@ import './HeroSection.css';
 // Using an existing image from the assets folder
 import heroBgImage from '../../assets/images/grow-scaled-1.jpg'; 
 
-const HeroSection = () => {
+const   HeroSection = () => {
   const sectionStyle = {
     backgroundImage: `url(${heroBgImage})`
   };

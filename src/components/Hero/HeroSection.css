@@ -5,8 +5,12 @@
   position: relative;
   /* Space below fixed navbar */
   margin-top: 2rem;
+<<<<<<< HEAD
   margin-bottom: 2rem;
   min-height: calc(100vh - 3rem);
+=======
+  min-height: calc(100vh - 3rem +20px);
+>>>>>>> 4652521529562f48c5d3d87d6d8eba09a562422d
   width: 100vw;
   max-width: 100%;
   background-size: cover;
@@ -22,7 +26,8 @@
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
-  padding-top: clamp(4rem, 6vw, 8rem); /* Reduced padding slightly */
+  padding-top: clamp(4rem, 6vw, 8rem);
+  padding-bottom: 60px; /* Reduced padding slightly */
 }
 
 /* Ensure black tint overlay is applied only to the background */
