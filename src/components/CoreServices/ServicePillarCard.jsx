@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CoreServicesGrid.css'; // Shares the stylesheet with its parent
 
 // This component is designed to be reusable for each service pillar.
@@ -16,9 +17,9 @@ const ServicePillarCard = ({ iconSrc, title, description, ctaLink }) => {
       </div>
       <h3 className="card-title">{title}</h3>
       <p className="card-description">{description}</p>
-      <a href={ctaLink} className="card-cta-link">
+      <Link to={ctaLink} className="card-cta-link">
         Explore Service →
-      </a>
+      </Link>
     </div>
   );
 };

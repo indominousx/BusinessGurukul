@@ -15,25 +15,25 @@ const servicesData = [
     iconSrc: digitalMarketingIcon,
     title: 'Digital Marketing',
     description: 'Get more visibility, qualified leads, and consistent growth with performance-driven marketing strategies.',
-    ctaLink: '/services/digital-marketing'
+    ctaLink: '/digital-marketing'
   },
   {
     iconSrc: videoAdsIcon,
     title: 'Video & Ads Creation',
     description: 'Engage your audience and drive conversions through powerful videos, ad creatives, and branded content.',
-    ctaLink: '/services/video-ads'
+    ctaLink: '/video-ad'
   },
   {
     iconSrc: techDevIcon,
     title: 'Technology Development',
     description: 'Build high-performing websites, apps, and custom systems that streamline operations as you scale.',
-    ctaLink: '/services/tech-development'
+    ctaLink: '/tech-development'
   },
   {
     iconSrc: consultingIcon,
     title: 'Business Consulting',
     description: 'Solve real business challenges with expert guidance on strategy, operations, sales, and systems.',
-    ctaLink: '/services/business-consulting'
+    ctaLink: '/consulting'
   }
 ];
 
