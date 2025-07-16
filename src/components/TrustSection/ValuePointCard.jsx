@@ -5,7 +5,7 @@ import './TrustSection.css'; // Shares the parent's stylesheet
 const ValuePointCard = ({ iconSrc, title, description }) => {
   return (
     <div className="value-point-card">
-      <img src={iconSrc} alt={`${title} icon`} className="value-icon" />
+      <img src={iconSrc} alt={`${title} icon`} className="value-icon" style={{ width: 150, height: 150, objectFit: 'cover', display: 'block', margin: '0 auto' }} />
       <h4 className="value-title">{title}</h4>
       <p className="value-description">{description}</p>
     </div>

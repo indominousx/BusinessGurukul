@@ -4,10 +4,10 @@ import './TrustSection.css';
 
 // Using placeholder icons for now. You can replace these with actual SVG icons or images
 // from your assets folder when available
-const allInOneIcon = "https://via.placeholder.com/60x60/ff6b6b/ffffff?text=All";
-const executionDrivenIcon = "https://via.placeholder.com/60x60/4ecdc4/ffffff?text=Exec";
-const midSegmentIcon = "https://via.placeholder.com/60x60/45b7d1/ffffff?text=Mid";
-const transparentIcon = "https://via.placeholder.com/60x60/96ceb4/ffffff?text=Trans";
+const allInOneIcon = "https://i.postimg.cc/j51RMxSN/workforce.jpg";
+const executionDrivenIcon = "https://i.postimg.cc/YC801wYN/execution.jpg";
+const midSegmentIcon = "https://i.postimg.cc/hPBt6G0b/midsegment.jpg";
+const transparentIcon = "https://i.postimg.cc/ZqdkJ8b9/collaborative.jpg";
 
 // Data array containing the 4 core value points from the document.
 const valuePointsData = [

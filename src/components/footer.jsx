@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-12">
-      <div className="container mx-auto px-6">
+    <footer className="w-full bg-black text-white px-4 py-6">
+      <div className="w-full">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12">
           {/* Left: Call to Action */}

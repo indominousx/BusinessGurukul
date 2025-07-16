@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function DigitalPresenceCTA() {
   return (
@@ -11,9 +12,13 @@ export default function DigitalPresenceCTA() {
         with a FREE consultation.
       </p>
       <div className="flex flex-col md:flex-row gap-4 justify-center">
-        <button className="!bg-orange-500 !hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-full transition-all">
-          Book Free Strategy Call
-        </button>
+      <Link
+            to="/contact"
+            style={{ color: 'white' }}
+            className="!bg-orange-500 !hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-full transition-all"
+          >
+           Book Free Strategy Call
+          </Link>
         <button className="!bg-orange-500 !hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-full transition-all">
           Get Free Audit Report
         </button>
