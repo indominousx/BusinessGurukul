@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DynamicEnquiryForm from './DynamicEnquiryForm';
 import './HeroSection.css';
 // Using an existing image from the assets folder
@@ -8,6 +8,8 @@ const   HeroSection = () => {
   const sectionStyle = {
     backgroundImage: `url(${heroBgImage})`
   };
+
+  const [showSlider, setShowSlider] = useState(false);
 
   return (
     <section className="hero-section" style={sectionStyle}>
@@ -30,6 +32,28 @@ const   HeroSection = () => {
           <DynamicEnquiryForm />
         </div>
       </div>
+
+      {/* Floating Button and Slider for Mobile */}
+      <button
+        className="slider-float-btn lg:hidden"
+        onClick={() => setShowSlider(true)}
+        style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 10010 }}
+      >
+        Claim Your Free 30-Min Strategy Call
+      </button>
+      {/* Overlay and Slider */}
+      {showSlider && (
+        <>
+          <div
+            className="slider-overlay lg:hidden"
+            onClick={() => setShowSlider(false)}
+          ></div>
+          <div className={`slider-form-container lg:hidden ${showSlider ? 'open' : ''}`}>
+            <button className="slider-close-btn" onClick={() => setShowSlider(false)}>&times;</button>
+            <DynamicEnquiryForm />
+          </div>
+        </>
+      )}
     </section>
   );
 };
