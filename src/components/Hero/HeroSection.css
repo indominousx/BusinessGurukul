@@ -5,6 +5,7 @@
   position: relative;
   /* Space below fixed navbar */
   margin-top: 2rem;
+  margin-bottom: 2rem;
   min-height: calc(100vh - 3rem);
   width: 100vw;
   max-width: 100%;
@@ -36,9 +37,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% + 20rem); /* Increased height by 2rem */
+  height: calc(100% + 50rem); /* Increased height for stretching further */
   background-color: rgba(25, 25, 25, 0.6);
   z-index: -1; /* Move overlay below all content */
+  background-size: cover; /* Ensure the image covers the entire overlay */
 }
 
 /* Dark overlay for image contrast */
@@ -118,6 +120,7 @@
   color: #111;
   border-radius: 8px;
   padding: 1.5rem;
+  
   box-shadow: 0 4px 30px rgba(0,0,0,0.2);
   width: 100%;
   max-height: none; /* Remove height restriction */

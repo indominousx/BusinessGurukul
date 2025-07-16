@@ -14,12 +14,14 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import FAQPage from "./pages/faq";
 import "./App.css";
-
+import ScrollToTop from "./components/ScrollToTop";
 const App = () => {
   return (
     <Router>
       <Navbar />
+      
       <div className="mt-6">
+          <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/consulting" element={<ConsultingPage />} />

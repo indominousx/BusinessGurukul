@@ -73,7 +73,7 @@ export default function Jobs() {
         <h2 className="text-4xl font-bold text-purple-700 mb-8 text-center">Available Positions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {openings.map((group, idx) => (
-            <div key={idx} className="bg-gradient-to-br from-purple-50 to-white rounded-2xl shadow-lg p-8 border border-purple-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <div key={idx} className="bg-gradient-to-br from-purple-50 to-white rounded-2xl shadow-lg p-8 border border-purple-100 hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col">
               <div className="flex items-center gap-4 mb-6">
                 <div className="text-4xl">{group.emoji}</div>
                 <div>
@@ -89,7 +89,7 @@ export default function Jobs() {
                   </li>
                 ))}
               </ul>
-              <button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-3 px-6 rounded-full transition-all duration-300" onClick={() => navigate('/contact')}>
+              <button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 mt-auto" onClick={() => navigate('/contact')}>
                 Apply Now
               </button>
             </div>
