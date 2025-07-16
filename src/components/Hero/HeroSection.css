@@ -51,6 +51,8 @@
   justify-content: center;
   position: relative;
   z-index: 1; /* Ensure text and form are above the overlay */
+  text-align: center; /* Center aligned text */
+  align-items: center; /* Center aligned content */
 }
 
 .hero-headline {
@@ -89,8 +91,8 @@
 .hero-form-container {
   flex: 0 0 auto;
   width: 100%;
-  max-width: 400px;
-  min-width: 300px;
+  max-width: 300px; /* Reduced width */
+  min-width: 200px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -213,7 +215,7 @@
   .hero-form-container {
     flex: none;
     width: 100%;
-    max-width: 400px;
+    max-width: 150px; /* Reduced width */
     align-items: flex-start;
   }
   .hero-subheadline { 
@@ -226,13 +228,13 @@
 
 @media (max-width: 1023px) {
   .hero-content {
-    padding-bottom: 8rem; /* Add space for mobile form header */
+    padding-bottom: 10 rem; /* Add space for mobile form header */
   }
 }
 
 @media (max-width: 768px) {
   .hero-content {
-    padding-bottom: 8rem; /* Add space for swipe-up form */
+    padding-bottom: 10 rem; /* Add space for swipe-up form */
   }
 }
 
@@ -240,6 +242,7 @@
   .hero-section {
     padding: 0.5rem;
     padding-top: 4rem;
+    padding-bottom: 10 rem; /* Reduced padding */
     width: 100vw;
     position: relative;
     left: 50%;
@@ -251,12 +254,12 @@
     padding: 1rem;
     width: calc(100vw - 2rem);
     max-width: calc(100vw - 2rem);
-    padding-bottom: 8rem; /* Space for mobile form */
+    padding-bottom: 10rem; /* Space for mobile form */
   }
 }
   .enquiry-form-wrapper {
     padding: 1.25rem;
-    width: 100%;
+    width: 75%;
     box-sizing: border-box;
   }
   .hero-cta-buttons {
@@ -662,7 +665,7 @@
 
 /* Increase hero content height */
 .hero-content {
-  height: calc(1.5(100vh - 6rem)); /* Adjust height to occupy more space */
+  height: calc(1.5(100vh - 10 rem)); /* Adjust height to occupy more space */
 }
 
 .hero-content {
