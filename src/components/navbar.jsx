@@ -72,7 +72,7 @@ export default function Navbar() {
 
         {/* Hamburger for mobile */}
         <button
-          className="md:hidden flex items-center px-3 py-2 border rounded text-orange-600 border-orange-600 focus:outline-none"
+          className="lg:hidden flex items-center px-3 py-2 border rounded text-orange-600 border-orange-600 focus:outline-none"
           onClick={() => setMobileMenuOpen((prev) => !prev)}
           aria-label="Open menu"
         >
@@ -82,7 +82,7 @@ export default function Navbar() {
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6 text-sm font-medium text-gray-800">
+        <div className="hidden lg:flex space-x-6 text-sm font-medium text-gray-800">
           <Link to="/" className="text-gray-900 hover:text-orange-600">
             Home
           </Link>
@@ -199,7 +199,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div ref={mobileMenuRef} className="md:hidden fixed inset-0 bg-black bg-opacity-40 z-[120] flex flex-col">
+        <div ref={mobileMenuRef} className="lg:hidden fixed inset-0 bg-black bg-opacity-40 z-[120] flex flex-col">
           <div className="bg-white w-full shadow-lg p-6 pt-4 flex flex-col gap-2 animate-fade-in-down overflow-y-auto max-h-screen">
             {/* Close button */}
             <button
